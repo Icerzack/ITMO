@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+>
+<h:head>
+    <title>Лендинговая страница</title>
+    <h:outputStylesheet name="index.css" />
+</h:head>
+<h:body>
+    <header>
+        <h1>Лабораторная работа №3</h1>
+        <span class="author">Кузнецов Максим Александрович P3211</span>
+        Вариант: 3109009
+    </header>
+    <main>
+        <h:outputText id="time" value="#{clock.time}" />
+        <p:poll interval="6" update="time" />
+    </main>
+    <footer>
+        <h:link value="Перейти скорее на main page!" outcome="navigate_main" />
+    </footer>
+</h:body>
+</html>

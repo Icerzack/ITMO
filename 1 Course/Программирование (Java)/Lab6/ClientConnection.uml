@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>ClientConnection</OriginalElement>
+  <nodes>
+    <node x="31.0" y="369.0">ClientSide</node>
+    <node x="0.0" y="0.0">ClientConnection</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="ClientSide" target="ClientConnection">
+      <point x="-37.5" y="-27.0" />
+      <point x="68.5" y="344.0" />
+      <point x="53.0" y="344.0" />
+      <point x="-53.0" y="159.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="88.0" y="108.0" />
+  <SelectedNodes>
+    <node>ClientConnection</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

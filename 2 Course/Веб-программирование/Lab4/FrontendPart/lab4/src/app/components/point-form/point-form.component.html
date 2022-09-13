@@ -1,0 +1,76 @@
+<div class="point-form">
+  <div class="point-form-row">
+    <label for="x">X: </label>
+    <!--<select name="x" id="x" [formControl]="x">-->
+      <!-- <option *ngFor="let xVal of xValues" [value]="xVal">{{xVal}}</option> -->
+    <!-- </select> -->
+    <input type="radio" name="x" value="-2" [formControl]="x" >
+    <label>-2</label>
+
+    <input type="radio" name="x" value="-1.5" [formControl]="x">
+    <label>-1.5</label>
+
+    <input type="radio" name="x" value="-1" [formControl]="x">
+    <label>-1</label>
+
+    <input type="radio" name="x" value="-0.5" [formControl]="x">
+    <label>-0.5</label>
+
+    <input type="radio" name="x" value="0" [formControl]="x">
+    <label>0</label>
+
+    <input type="radio" name="x" value="0.5" [formControl]="x">
+    <label>0.5</label>
+
+    <input type="radio" name="x" value="1" [formControl]="x">
+    <label>1</label>
+
+    <input type="radio" name="x" value="1.5" [formControl]="x">
+    <label>1.5</label>
+
+    <input type="radio" name="x" value="2" [formControl]="x">
+    <label>2</label>
+
+  </div>
+
+  <div class="point-form-row">
+    <label for="y">Y: </label>
+    <input type="text" id="y" [formControl]="y">
+  </div>
+
+  <div class="point-form-row">
+    <label for="r">R: </label>
+    <input type="radio" name="r" value="-2" [formControl]="_r"  (input)="setR($event)">
+    <label>-2</label>
+
+    <input type="radio" name="r" value="-1.5" [formControl]="_r" (input)="setR($event)">
+    <label>-1.5</label>
+
+    <input type="radio" name="r" value="-1" [formControl]="_r" (input)="setR($event)">
+    <label>-1</label>
+
+    <input type="radio" name="r" value="-0.5" [formControl]="_r" (input)="setR($event)">
+    <label>-0.5</label>
+
+    <input type="radio" name="r" value="0" [formControl]="_r" (input)="setR($event)">
+    <label>0</label>
+
+    <input type="radio" name="r" value="0.5" [formControl]="_r" (input)="setR($event)">
+    <label>0.5</label>
+
+    <input type="radio" name="r" value="1" [formControl]="_r" (input)="setR($event)">
+    <label>1</label>
+
+    <input type="radio" name="r" value="1.5" [formControl]="_r" (input)="setR($event)">
+    <label>1.5</label>
+
+    <input type="radio" name="r" value="2" [formControl]="_r" (input)="setR($event)">
+    <label>2</label>
+
+  </div>
+
+  <div class="point-form-row">
+    <button class="point-form-btn" (click)="submit()">Отправить</button>
+    <button class="point-form-btn" (click)="reset()">Очистить</button>
+  </div>
+</div>

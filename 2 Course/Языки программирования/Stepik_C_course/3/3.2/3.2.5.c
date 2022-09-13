@@ -1,0 +1,2 @@
+square
+cube

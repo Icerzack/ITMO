@@ -1,0 +1,46 @@
+.point-table{
+  text-align: center;
+  border-collapse: collapse;
+
+  background-color: white;
+}
+
+.point-table th,td{
+  border: 1px solid #eaeaea;
+}
+
+table{
+  background-color: white;
+}
+
+.point-table thead td{
+  background-color: #ff0000;
+  border: 1px solid #252525;
+  color: white;
+}
+
+.point-table tr:nth-child(2n){
+  background-color: #eaeaea;
+}
+
+thead{
+  column-rule-color: #3398fe;
+}
+
+tr{
+  text-align: center;
+}
+/* TABLET */
+@media (min-width: 720px) and (max-width: 1209px) {
+  .point-table{
+    width: 700px;
+  }
+
+}
+
+/* MOBILE */
+@media (max-width: 720px) {
+  .point-table{
+    width: 100%;
+  }
+}

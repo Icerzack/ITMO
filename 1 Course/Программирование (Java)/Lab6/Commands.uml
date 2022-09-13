@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>Commands</OriginalElement>
+  <nodes>
+    <node x="3116.0" y="379.5">Commands.Show</node>
+    <node x="1625.0" y="391.0">Commands.Save</node>
+    <node x="1848.0" y="368.0">Commands.Add</node>
+    <node x="2604.0" y="379.5">Commands.FilterByLocation</node>
+    <node x="1819.5" y="0.0">Commands.AbstractCommand</node>
+    <node x="1394.0" y="379.5">Commands.AddIfMin</node>
+    <node x="2381.0" y="379.5">Commands.Info</node>
+    <node x="3547.0" y="379.5">Commands.ExecuteScript</node>
+    <node x="415.0" y="391.0">Commands.RemoveById</node>
+    <node x="1109.0" y="379.5">Commands.FilterContainsName</node>
+    <node x="2870.0" y="391.0">Commands.RemoveFirst</node>
+    <node x="886.0" y="379.5">Commands.Update</node>
+    <node x="2071.0" y="379.5">Commands.FilterLessThanPassportId</node>
+    <node x="663.0" y="379.5">Commands.History</node>
+    <node x="3339.0" y="402.0">Commands.Clear</node>
+    <node x="0.0" y="368.5">Commands.Help</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Commands.Save" target="Commands.AbstractCommand">
+      <point x="-50.75" y="-49.5" />
+      <point x="1675.75" y="328.0" />
+      <point x="1927.833333333333" y="328.0" />
+      <point x="-21.666666666666742" y="94.0" />
+    </edge>
+    <edge source="Commands.Show" target="Commands.AbstractCommand">
+      <point x="-50.75" y="-61.0" />
+      <point x="3166.75" y="258.0" />
+      <point x="2031.8333333333335" y="258.0" />
+      <point x="82.33333333333348" y="94.0" />
+    </edge>
+    <edge source="Commands.ExecuteScript" target="Commands.AbstractCommand">
+      <point x="58.0" y="-61.0" />
+      <point x="3721.0" y="208.0" />
+      <point x="2075.1666666666665" y="208.0" />
+      <point x="125.66666666666652" y="94.0" />
+    </edge>
+    <edge source="Commands.Clear" target="Commands.AbstractCommand">
+      <point x="47.0" y="-38.5" />
+      <point x="3480.0" y="228.0" />
+      <point x="2057.833333333333" y="228.0" />
+      <point x="108.33333333333303" y="94.0" />
+    </edge>
+    <edge source="Commands.FilterContainsName" target="Commands.AbstractCommand">
+      <point x="-66.25" y="-61.0" />
+      <point x="1175.25" y="288.0" />
+      <point x="1893.1666666666665" y="288.0" />
+      <point x="-56.33333333333326" y="94.0" />
+    </edge>
+    <edge source="Commands.AddIfMin" target="Commands.AbstractCommand">
+      <point x="52.75" y="-61.0" />
+      <point x="1552.25" y="318.0" />
+      <point x="1919.1666666666665" y="318.0" />
+      <point x="-30.333333333333258" y="94.0" />
+    </edge>
+    <edge source="Commands.RemoveFirst" target="Commands.AbstractCommand">
+      <point x="56.5" y="-49.5" />
+      <point x="3039.5" y="268.0" />
+      <point x="2023.1666666666665" y="268.0" />
+      <point x="73.66666666666652" y="94.0" />
+    </edge>
+    <edge source="Commands.History" target="Commands.AbstractCommand">
+      <point x="50.75" y="-61.0" />
+      <point x="815.25" y="258.0" />
+      <point x="1867.1666666666665" y="258.0" />
+      <point x="-82.33333333333326" y="94.0" />
+    </edge>
+    <edge source="Commands.Update" target="Commands.AbstractCommand">
+      <point x="50.75" y="-61.0" />
+      <point x="1038.25" y="278.0" />
+      <point x="1884.5" y="278.0" />
+      <point x="-65.0" y="94.0" />
+    </edge>
+    <edge source="Commands.FilterLessThanPassportId" target="Commands.AbstractCommand">
+      <point x="72.5" y="-61.0" />
+      <point x="2288.5" y="328.0" />
+      <point x="1971.1666666666665" y="328.0" />
+      <point x="21.666666666666742" y="94.0" />
+    </edge>
+    <edge source="Commands.Info" target="Commands.AbstractCommand">
+      <point x="-50.75" y="-61.0" />
+      <point x="2431.75" y="318.0" />
+      <point x="1979.833333333333" y="318.0" />
+      <point x="30.333333333333258" y="94.0" />
+    </edge>
+    <edge source="Commands.Add" target="Commands.AbstractCommand">
+      <point x="50.75" y="-72.5" />
+      <point x="2000.25" y="348.0" />
+      <point x="1953.8333333333335" y="348.0" />
+      <point x="4.333333333333485" y="94.0" />
+    </edge>
+    <edge source="Commands.Help" target="Commands.AbstractCommand">
+      <point x="-98.75" y="-72.0" />
+      <point x="98.75" y="208.0" />
+      <point x="1823.833333333333" y="208.0" />
+      <point x="-125.66666666666674" y="94.0" />
+    </edge>
+    <edge source="Commands.RemoveById" target="Commands.AbstractCommand">
+      <point x="-57.0" y="-49.5" />
+      <point x="472.0" y="228.0" />
+      <point x="1841.1666666666665" y="228.0" />
+      <point x="-108.33333333333326" y="94.0" />
+    </edge>
+    <edge source="Commands.FilterByLocation" target="Commands.AbstractCommand">
+      <point x="61.5" y="-61.0" />
+      <point x="2788.5" y="288.0" />
+      <point x="2005.833333333333" y="288.0" />
+      <point x="56.33333333333326" y="94.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.5293005671077504" x="2741.0" y="80.0" />
+  <SelectedNodes>
+    <node>Commands.Help</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

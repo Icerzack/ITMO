@@ -1,0 +1,41 @@
+#coordinatesForm, #hits {
+    margin: 16px;
+    font-family: 'Roboto', sans-serif;
+    color: #333333;
+}
+
+#coordinatesForm > * {
+    display: block;
+    margin-bottom: 16px;
+}
+
+#coordinatesForm .options label {
+    display: inline-block;
+    margin-left: 12px;
+}
+
+#area {
+    width: 400px;
+    height: 400px;
+}
+
+.hidden {
+    display: none;
+}
+
+#hits th, #hits td {
+    min-width: 60px;
+    text-align: left;
+    border: 1px solid #000;
+}
+
+.errorMsg {
+    display: inline-block;
+    margin-left: 16px;
+    color: #000000;
+}
+
+table {
+    width: 100%;
+    border: 1px solid #000;
+}

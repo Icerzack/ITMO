@@ -1,0 +1,29 @@
+svg line{
+  stroke: black;
+}
+
+#svg-x, #svg-y, svg .vertical-label, svg .horizontal-label{
+  fill: black;
+  stroke: transparent;
+  font-size: 0.1px;
+}
+
+svg .vertical-label{
+  text-anchor: start;
+  alignment-baseline: middle;
+}
+
+svg .horizontal-label{
+  text-anchor: middle;
+}
+
+path{
+  stroke: black;
+  fill: #3398fe
+}
+
+svg circle{
+  stroke-width: 0.005;
+  transform: translate(0, 0);
+  transition: transform 0.3s ease;
+}

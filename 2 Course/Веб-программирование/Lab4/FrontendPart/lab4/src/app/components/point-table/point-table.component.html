@@ -1,0 +1,22 @@
+<table class="point-table">
+  <thead>
+    <tr>
+      <td>Владелец:</td>
+      <td>X:</td>
+      <td>Y:</td>
+      <td>R:</td>
+      <td>Попадание:</td>
+      <td>Время:</td>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let point of pointList">
+    <td>{{point.user.username}}</td>
+    <td>{{point.x}}</td>
+    <td>{{point.y}}</td>
+    <td>{{point.r}}</td>
+    <td>{{point.result ? '✅' : '❌'}}</td>
+    <td>{{point.time}}</td>
+  </tr>
+  </tbody>
+</table>

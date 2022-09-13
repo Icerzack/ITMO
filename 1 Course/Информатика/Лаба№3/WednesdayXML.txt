@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Wednesday>
+    <Lesson1>
+        <Name>ДИСКРЕТНАЯ МАТЕМАТИКА(ЛЕК)</Name>
+        <Time>10:00-11:30</Time>
+        <Week>Нечетная</Week>
+        <Corpus>ул.Ломоносова, д. 9, лит. Е</Corpus>
+        <Audience>2202</Audience>
+        <Teacher>Поляков Владимир Иванович</Teacher>
+        <Type>Очно-дистанционный</Type>
+    </Lesson1>
+    <Lesson2>
+        <Name>ИНОСТРАННЫЙ ЯЗЫК(ПРАК)</Name>
+        <Time>11:40-13:10</Time>
+        <Week>Every</Week>
+        <Corpus>ул.Ломоносова, д. 9, лит. Е</Corpus>
+        <Audience>0</Audience>
+        <Teacher>Laine</Teacher>
+        <Type>Дистанционный</Type>
+    </Lesson2>
+    <Lesson3>
+        <Name>МАТЕМАТИКА (БАЗОВЫЙ УРОВЕНЬ)(ПРАК)</Name>
+        <Time>13:30-15:00</Time>
+        <Week>Every</Week>
+        <Corpus>ул.Ломоносова, д. 9, лит. Е</Corpus>
+        <Audience>3407</Audience>
+        <Teacher>Беспалов Владимир</Teacher>
+        <Type>Очно-дистанционный</Type>
+    </Lesson3>
+</Wednesday>

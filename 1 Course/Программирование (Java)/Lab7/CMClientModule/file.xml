@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<people>
+    <person>
+        <name>Mak1</name>
+        <coordinates>100;100</coordinates>
+        <height>176.0</height>
+        <passportId>999</passportId>
+        <hairColor>BROWN</hairColor>
+        <nationality>USA</nationality>
+        <location>100;100;Makd</location>
+    </person>
+    <person>
+        <name>Man2</name>
+        <coordinates>100;100</coordinates>
+        <height>176</height>
+        <passportId>8008</passportId>
+        <hairColor>BROWN</hairColor>
+        <nationality>USA</nationality>
+        <location>100;100;Makd</location>
+    </person>
+    <person>
+        <name>Man3</name>
+        <coordinates>100;100</coordinates>
+        <height>176.0</height>
+        <passportId>999</passportId>
+        <hairColor>BROWN</hairColor>
+        <nationality>USA</nationality>
+        <location>100;100;Mak</location>
+    </person>
+</people>

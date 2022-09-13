@@ -1,0 +1,35 @@
+
+.login-form-row{
+  margin-top: 5px;
+}
+
+.login-form-cell{
+  margin: 0 10px 10px;
+}
+
+/* TABLET */
+@media (min-width: 720px) and (max-width: 1209px) {
+  h2{
+    text-align: center;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 797px) {
+  h2{
+    text-align: center;
+  }
+
+  #password-for:after,#login-for:after{
+    content: "\A";
+    white-space: pre;
+  }
+
+  .login-form,.login-form-row{
+    width: 100%;
+  }
+
+  #login,#password{
+    width: 100%;
+  }
+}

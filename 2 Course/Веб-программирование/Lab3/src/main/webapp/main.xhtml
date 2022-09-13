@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui"
+>
+
+<h:head>
+    <title>Area check</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+    <h:outputStylesheet name="main.css" />
+</h:head>
+
+<h:body>
+    <canvas id="area" />
+    <f:metadata>
+        <f:event type="preRenderView" listener="#{controller.addStoredData}"/>
+    </f:metadata>
+
+    <h:form id="coordinatesForm" class="coordinates">
+        <h:outputLabel value="x: ">
+            <p:selectOneMenu id="x" widgetVar="x" value="#{formHit.x}">
+                <f:selectItem itemLabel="Select One" itemValue=""/>
+                <f:selectItem itemLabel="-2" itemValue="-2"/>
+                <f:selectItem itemLabel="-1.5" itemValue="-1.5"/>
+                <f:selectItem itemLabel="-1" itemValue="-1"/>
+                <f:selectItem itemLabel="-0.5" itemValue="-0.5"/>
+                <f:selectItem itemLabel="0" itemValue="0"/>
+                <f:selectItem itemLabel="0.5" itemValue="0.5"/>
+                <f:selectItem itemLabel="1" itemValue="1"/>
+            </p:selectOneMenu>
+        </h:outputLabel>
+
+        <h:outputLabel value="y: ">
+            <h:inputText
+                id="y"
+                value="#{formHit.y}"
+                validatorMessage="Y is from -3 to 3!"
+                converterMessage="Y is a number!"
+                maxlength="6"
+            >
+                <f:validateDoubleRange minimum="-3.0001" maximum="2.9999" />
+            </h:inputText>
+            <h:message for="y" errorClass="errorMsg" />
+        </h:outputLabel>
+
+        <h:outputLabel value="r: ">
+            <h:inputText
+                    id="r"
+                    value="#{formHit.r}"
+                    validatorMessage="R is from 1 to 4!"
+                    converterMessage="R is a number!"
+                    maxlength="6"
+                    onkeyup="cheburek()"
+            >
+                <f:validateDoubleRange minimum="1.0001" maximum="3.9999" />
+            </h:inputText>
+            <h:message for="r" errorClass="errorMsg" />
+        </h:outputLabel>
+
+        <p:commandButton value="Submit" action="#{controller.formAdding}" update="hits">
+            <f:ajax execute="coordinatesForm" render="hits coordinatesForm" />
+        </p:commandButton>
+
+        <p:commandButton ajax="false" id="clear-button" value="Clear" onclick="setDefaultV()" action="#{controller.updateAll}">
+        </p:commandButton>
+
+    </h:form>
+
+    <h:form styleClass="hidden" id="chart-form">
+        <h:inputText id="chart-x" value="#{sVGHit.x}" required="true"/>
+        <h:inputText id="chart-y" value="#{sVGHit.y}" required="true"/>
+        <h:inputText id="chart-r" value="#{sVGHit.r}" required="true"/>
+        <p:commandButton id="refresh" value="submit" action="#{controller.addStoredData}"/>
+        <p:commandButton id="submit" value="submit" action="#{controller.svgAdding}" update="hits"/>
+    </h:form>
+
+    <footer>
+        <h:link value="Вернуться к часам" outcome="navigate_index" />
+    </footer>
+
+    <h:dataTable id="hits" value="#{controller.results}" var="pointEntity">
+        <h:column>
+            <f:facet name="header">X</f:facet>
+            <h:outputText value="#{pointEntity.x}"/>
+        </h:column>
+        <h:column>
+            <f:facet name="header">Y</f:facet>
+            <h:outputText value="#{pointEntity.y}"/>
+        </h:column>
+        <h:column>
+            <f:facet name="header">R</f:facet>
+            <h:outputText value="#{pointEntity.r}"/>
+        </h:column>
+        <h:column>
+            <f:facet name="header">Hit</f:facet>
+            <h:outputText value="#{pointEntity.doesHit}"/>
+        </h:column>
+    </h:dataTable>
+
+    <h:outputScript name="canvas.js"/>
+
+</h:body>
+</html>

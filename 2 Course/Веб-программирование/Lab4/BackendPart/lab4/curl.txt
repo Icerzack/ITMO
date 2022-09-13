@@ -1,0 +1,4 @@
+
+
+curl -X POST -d '{"username": "icerzack", "password": "123"}' http://localhost:8080/register
+

@@ -1,0 +1,1 @@
+![image](Lab3Task.jpg)

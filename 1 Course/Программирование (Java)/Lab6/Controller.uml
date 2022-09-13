@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>Controller</OriginalElement>
+  <nodes>
+    <node x="182.87500000000003" y="414.0">Controller.CollectionManager</node>
+    <node x="276.20833333333337" y="851.0">Controller.ServerConnection</node>
+    <node x="223.00000000000003" y="0.0">Controller.ServerSide</node>
+    <node x="0.0" y="155.0">Controller.OutputSetup</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Controller.ServerSide" target="Controller.CollectionManager">
+      <point x="-45.375" y="182.0" />
+      <point x="35.25" y="-193.5" />
+    </edge>
+    <edge source="Controller.CollectionManager" target="Controller.ServerSide">
+      <point x="-35.25" y="-193.5" />
+      <point x="288.625" y="389.0" />
+      <point x="268.375" y="389.0" />
+      <point x="-136.125" y="182.0" />
+    </edge>
+    <edge source="Controller.CollectionManager" target="Controller.OutputSetup">
+      <point x="-105.75" y="-193.5" />
+      <point x="218.12500000000003" y="389.0" />
+      <point x="101.5" y="389.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="Controller.ServerConnection" target="Controller.ServerSide">
+      <point x="79.33333333333331" y="-49.5" />
+      <point x="475.375" y="389.0" />
+      <point x="540.625" y="389.0" />
+      <point x="136.125" y="182.0" />
+    </edge>
+    <edge source="Controller.ServerConnection" target="Controller.CollectionManager">
+      <point x="-79.33333333333331" y="-49.5" />
+      <point x="315.87500000000006" y="826.0" />
+      <point x="253.37500000000003" y="826.0" />
+      <point x="-70.5" y="193.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.6000000000000001" x="91.99999999999989" y="516.3333333333333" />
+  <SelectedNodes>
+    <node>Controller.ServerSide</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

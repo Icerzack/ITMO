@@ -1,0 +1,19 @@
+version: '3.1'
+
+services :
+  db:
+    image: postgres
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: kirill
+      POSTGRES_PASSWORD: 1
+      POSTGRES_DB: lab4-db
+
+  admin:
+    image: adminer
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - '9999:8080'

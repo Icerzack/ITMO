@@ -1,0 +1,28 @@
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+header {
+    font-family: 'Roboto', sans-serif;
+    color: #333333;
+}
+header ul {
+    list-style: none;
+    padding-left: 0;
+}
+header ul > li {
+    margin-bottom: 8px;
+}
+
+.author {
+    font-weight: 700;
+}
+
+header .cursive {
+    font-style: italic;
+}
+
+footer {
+    margin-top: 16px;
+}

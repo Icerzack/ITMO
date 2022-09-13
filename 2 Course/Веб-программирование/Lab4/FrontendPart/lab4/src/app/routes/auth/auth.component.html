@@ -1,0 +1,20 @@
+<h2>Login:</h2>
+
+<div class="login-form-wrapper">
+  <div class="login-form">
+    <div class="login-form-row">
+      <label class="login-form-cell" for="login">Username:</label>
+      <input class="login-form-cell" type="text" name="login" id="login" [formControl]="username">
+    </div>
+    <div class="login-form-row">
+      <label class="login-form-cell" for="password">Password: </label>
+      <input class="login-form-cell" type="password" name="password" id="password" [formControl]="password">
+    </div>
+
+    <div class="login-form-row login-btn">
+      <button (click)="login()">Sign in</button>
+    </div>
+  </div>
+</div>
+<br>
+Or go to <a href="/register">register</a> page.
