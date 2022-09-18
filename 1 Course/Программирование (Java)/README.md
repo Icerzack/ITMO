@@ -3,10 +3,10 @@
 ![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
 
 #Лаб работа №1
-https://github.com/Icerzack/ITMOProgramming/blob/master/Lab1.java
+https://github.com/Icerzack/ITMOProgramming/tree/master/Lab1
 
 #Лаб работа №2
-https://github.com/Icerzack/ITMOProgramming/tree/master/%D0%9B%D0%B0%D0%B1%D0%B0%E2%84%962
+https://github.com/Icerzack/ITMOProgramming/tree/master/Lab2
 
 #Лаб работа №3
 https://github.com/Icerzack/ITMOProgramming/tree/master/Lab3
