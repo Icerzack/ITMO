@@ -141,7 +141,6 @@ ufa_dist = {
 }
 
 
-
 def bfs(graph, start, end):
     queue = [[start]]
     visited = set()
@@ -225,7 +224,7 @@ def bds(graph, start, goal):
     return None
 
 
-def gbfs(graph, start, end):
+def gbfs2(graph, start, end):
     queue = PriorityQueue()
     queue.put((0, [start]))
     visited = set()
@@ -243,40 +242,38 @@ def gbfs(graph, start, end):
                 queue.put((graph[node][neighbor]+priority, new_path))
 
 
-def sort_dist(node, graph, ufa_dist):
-    queue = PriorityQueue()
-
+def sort_dist(node, graph, distance):
     distances = []
     for neighbour in graph.get(node, []).keys():
-        distances.append(ufa_dist[neighbour])
+        distances.append(distance[neighbour])
 
     distances.sort()
-    sortedNodes = []
+    sorted_nodes = []
     for dist in distances:
-        key = list(ufa_dist.keys())[list(ufa_dist.values()).index(dist)]
-        sortedNodes.append(key)
-    return sortedNodes
+        key = list(distance.keys())[list(distance.values()).index(dist)]
+        sorted_nodes.append(key)
+    return sorted_nodes
 
 
-def gbfs(graph, start, end, ufa_dist, visited):
-
+def gbfs(graph, start, end, dist, visited):
     if start == end:
         visited.append(start)
-        print(visited)
+        print("Greedy" + str(visited))
         return
     if start in visited:
         return
 
     visited.append(start)
-    nodes = sort_dist(start, graph, ufa_dist)
+    nodes = sort_dist(start, graph, dist)
     for node in nodes:
         if node not in visited:
-            gbfs(graph, node, end, ufa_dist, visited)
+            gbfs(graph, node, end, dist, visited)
 
 visited = []
 best_cost = dict()
 
-def return_array_sorted_by_cost(node, graph):
+
+def sort_cost(node, graph):
     neighbours = graph[node].keys()
     cost = dict()
     for neighbour in neighbours:
@@ -285,22 +282,21 @@ def return_array_sorted_by_cost(node, graph):
     return cost
 
 
-def a_star_search(currNode, finishNode, graph, visited, best_cost):
-    if currNode == finishNode:
-        visited.append(currNode)
-        print(visited)
-        print("Best costs:", best_cost)
+def a_star(current_node, end_node, graph, visited, best_cost):
+    if current_node == end_node:
+        visited.append(current_node)
+        print("A*" + str(visited))
         return True
-    if currNode in visited:
+    if current_node in visited:
         return False
 
-    visited.append(currNode)
-    currNeighbours = return_array_sorted_by_cost(currNode, graph)
-    for node in currNeighbours:
+    visited.append(current_node)
+    current_neighbours = sort_cost(current_node, graph)
+    for node in current_neighbours:
         if node not in best_cost:
-            best_cost[node] = currNeighbours[node]
-        if currNeighbours[node] <= best_cost[node] and node not in visited:
-            result = a_star_search(node, finishNode, graph, visited, best_cost)
+            best_cost[node] = current_neighbours[node]
+        if current_neighbours[node] <= best_cost[node] and node not in visited:
+            result = a_star(node, end_node, graph, visited, best_cost)
             if result == True:
                 return True
 
@@ -310,11 +306,11 @@ def a_star_search(currNode, finishNode, graph, visited, best_cost):
 if __name__ == '__main__':
     print("BFS path: " + str(bfs(graph, 'Рига', 'Уфа')))
     print("DFS path: " + str(dfs(graph, 'Рига', 'Уфа')))
-    print("DLS path: " + str(dls(graph, 'Рига', 'Уфа', 0, 20)))
-    print("IDDFS path: " + str(iddfs(graph, 'Рига', 'Уфа', 20)))
+    print("DLS path: " + str(dls(graph, 'Рига', 'Уфа', 0, 10)))
+    print("IDDFS path: " + str(iddfs(graph, 'Рига', 'Уфа', 90)))
     print("BDS path: " + str(bds(graph, 'Рига', 'Уфа')))
-    # print("Greedy BFS: " + str(gbfs(graph, 'Рига', 'Уфа')[0]) + "\n With Total: " + str(gbfs(graph, 'Рига', 'Уфа')[1]))
     print("--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---")
     gbfs(graph, 'Рига', 'Уфа', ufa_dist, [])
-    a_star_search('Рига', 'Уфа', graph, visited, best_cost)
+    a_star('Рига', 'Уфа', graph, visited, best_cost)
+    print("Самописный" + str(gbfs2(graph, "Рига", "Уфа")))
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
