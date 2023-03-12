@@ -1,0 +1,265 @@
+[
+    {
+        "instruction_code": "jmp",
+        "position": 0,
+        "arguments": [
+            {
+                "data": 1,
+                "address_mode": "relative"
+            }
+        ]
+    },
+    {
+        "instruction_code": "mov",
+        "position": 1,
+        "arguments": [
+            {
+                "data": "r5",
+                "address_mode": "register"
+            },
+            {
+                "data": 2,
+                "address_mode": "data"
+            }
+        ]
+    },
+    {
+        "instruction_code": "mov",
+        "position": 2,
+        "arguments": [
+            {
+                "data": "r1",
+                "address_mode": "register"
+            },
+            {
+                "data": 1,
+                "address_mode": "data"
+            }
+        ]
+    },
+    {
+        "instruction_code": "mov",
+        "position": 3,
+        "arguments": [
+            {
+                "data": "r2",
+                "address_mode": "register"
+            },
+            {
+                "data": 2,
+                "address_mode": "data"
+            }
+        ]
+    },
+    {
+        "instruction_code": "add",
+        "position": 4,
+        "arguments": [
+            {
+                "data": "r1",
+                "address_mode": "register"
+            },
+            {
+                "data": "r1",
+                "address_mode": "register"
+            },
+            {
+                "data": "r2",
+                "address_mode": "register"
+            }
+        ]
+    },
+    {
+        "instruction_code": "cmp",
+        "position": 5,
+        "arguments": [
+            {
+                "data": "r1",
+                "address_mode": "register"
+            },
+            {
+                "data": 4000000,
+                "address_mode": "data"
+            }
+        ]
+    },
+    {
+        "instruction_code": "jg",
+        "position": 6,
+        "arguments": [
+            {
+                "data": 12,
+                "address_mode": "relative"
+            }
+        ]
+    },
+    {
+        "instruction_code": "mod",
+        "position": 7,
+        "arguments": [
+            {
+                "data": "r4",
+                "address_mode": "register"
+            },
+            {
+                "data": "r1",
+                "address_mode": "register"
+            },
+            {
+                "data": 2,
+                "address_mode": "data"
+            }
+        ]
+    },
+    {
+        "instruction_code": "je",
+        "position": 8,
+        "arguments": [
+            {
+                "data": 5,
+                "address_mode": "relative"
+            }
+        ]
+    },
+    {
+        "instruction_code": "mov",
+        "position": 9,
+        "arguments": [
+            {
+                "data": "r3",
+                "address_mode": "register"
+            },
+            {
+                "data": "r1",
+                "address_mode": "register"
+            }
+        ]
+    },
+    {
+        "instruction_code": "mov",
+        "position": 10,
+        "arguments": [
+            {
+                "data": "r1",
+                "address_mode": "register"
+            },
+            {
+                "data": "r2",
+                "address_mode": "register"
+            }
+        ]
+    },
+    {
+        "instruction_code": "mov",
+        "position": 11,
+        "arguments": [
+            {
+                "data": "r2",
+                "address_mode": "register"
+            },
+            {
+                "data": "r3",
+                "address_mode": "register"
+            }
+        ]
+    },
+    {
+        "instruction_code": "jmp",
+        "position": 12,
+        "arguments": [
+            {
+                "data": -8,
+                "address_mode": "relative"
+            }
+        ]
+    },
+    {
+        "instruction_code": "add",
+        "position": 13,
+        "arguments": [
+            {
+                "data": "r5",
+                "address_mode": "register"
+            },
+            {
+                "data": "r5",
+                "address_mode": "register"
+            },
+            {
+                "data": "r1",
+                "address_mode": "register"
+            }
+        ]
+    },
+    {
+        "instruction_code": "mov",
+        "position": 14,
+        "arguments": [
+            {
+                "data": "r3",
+                "address_mode": "register"
+            },
+            {
+                "data": "r1",
+                "address_mode": "register"
+            }
+        ]
+    },
+    {
+        "instruction_code": "mov",
+        "position": 15,
+        "arguments": [
+            {
+                "data": "r1",
+                "address_mode": "register"
+            },
+            {
+                "data": "r2",
+                "address_mode": "register"
+            }
+        ]
+    },
+    {
+        "instruction_code": "mov",
+        "position": 16,
+        "arguments": [
+            {
+                "data": "r2",
+                "address_mode": "register"
+            },
+            {
+                "data": "r3",
+                "address_mode": "register"
+            }
+        ]
+    },
+    {
+        "instruction_code": "jmp",
+        "position": 17,
+        "arguments": [
+            {
+                "data": -13,
+                "address_mode": "relative"
+            }
+        ]
+    },
+    {
+        "instruction_code": "st",
+        "position": 18,
+        "arguments": [
+            {
+                "data": 1,
+                "address_mode": "absolute"
+            },
+            {
+                "data": "r5",
+                "address_mode": "register"
+            }
+        ]
+    },
+    {
+        "instruction_code": "hlt",
+        "position": 19,
+        "arguments": []
+    }
+]

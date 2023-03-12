@@ -1,0 +1,443 @@
+[
+    {
+        "instruction_code": "jmp",
+        "position": 0,
+        "arguments": [
+            {
+                "data": 10,
+                "address_mode": "relative"
+            }
+        ]
+    },
+    {
+        "instruction_code": "data",
+        "position": 1,
+        "arguments": [
+            {
+                "data": 104,
+                "address_mode": "data"
+            }
+        ]
+    },
+    {
+        "instruction_code": "data",
+        "position": 2,
+        "arguments": [
+            {
+                "data": 101,
+                "address_mode": "data"
+            }
+        ]
+    },
+    {
+        "instruction_code": "data",
+        "position": 3,
+        "arguments": [
+            {
+                "data": 108,
+                "address_mode": "data"
+            }
+        ]
+    },
+    {
+        "instruction_code": "data",
+        "position": 4,
+        "arguments": [
+            {
+                "data": 111,
+                "address_mode": "data"
+            }
+        ]
+    },
+    {
+        "instruction_code": "data",
+        "position": 5,
+        "arguments": [
+            {
+                "data": 32,
+                "address_mode": "data"
+            }
+        ]
+    },
+    {
+        "instruction_code": "data",
+        "position": 6,
+        "arguments": [
+            {
+                "data": 119,
+                "address_mode": "data"
+            }
+        ]
+    },
+    {
+        "instruction_code": "data",
+        "position": 7,
+        "arguments": [
+            {
+                "data": 114,
+                "address_mode": "data"
+            }
+        ]
+    },
+    {
+        "instruction_code": "data",
+        "position": 8,
+        "arguments": [
+            {
+                "data": 100,
+                "address_mode": "data"
+            }
+        ]
+    },
+    {
+        "instruction_code": "data",
+        "position": 9,
+        "arguments": [
+            {
+                "data": 33,
+                "address_mode": "data"
+            }
+        ]
+    },
+    {
+        "instruction_code": "ld",
+        "position": 10,
+        "arguments": [
+            {
+                "data": "r1",
+                "address_mode": "register"
+            },
+            {
+                "data": -9,
+                "address_mode": "relative"
+            }
+        ]
+    },
+    {
+        "instruction_code": "st",
+        "position": 11,
+        "arguments": [
+            {
+                "data": 1,
+                "address_mode": "absolute"
+            },
+            {
+                "data": "r1",
+                "address_mode": "register"
+            }
+        ]
+    },
+    {
+        "instruction_code": "ld",
+        "position": 12,
+        "arguments": [
+            {
+                "data": "r1",
+                "address_mode": "register"
+            },
+            {
+                "data": -10,
+                "address_mode": "relative"
+            }
+        ]
+    },
+    {
+        "instruction_code": "st",
+        "position": 13,
+        "arguments": [
+            {
+                "data": 1,
+                "address_mode": "absolute"
+            },
+            {
+                "data": "r1",
+                "address_mode": "register"
+            }
+        ]
+    },
+    {
+        "instruction_code": "ld",
+        "position": 14,
+        "arguments": [
+            {
+                "data": "r1",
+                "address_mode": "register"
+            },
+            {
+                "data": -11,
+                "address_mode": "relative"
+            }
+        ]
+    },
+    {
+        "instruction_code": "st",
+        "position": 15,
+        "arguments": [
+            {
+                "data": 1,
+                "address_mode": "absolute"
+            },
+            {
+                "data": "r1",
+                "address_mode": "register"
+            }
+        ]
+    },
+    {
+        "instruction_code": "ld",
+        "position": 16,
+        "arguments": [
+            {
+                "data": "r1",
+                "address_mode": "register"
+            },
+            {
+                "data": -13,
+                "address_mode": "relative"
+            }
+        ]
+    },
+    {
+        "instruction_code": "st",
+        "position": 17,
+        "arguments": [
+            {
+                "data": 1,
+                "address_mode": "absolute"
+            },
+            {
+                "data": "r1",
+                "address_mode": "register"
+            }
+        ]
+    },
+    {
+        "instruction_code": "ld",
+        "position": 18,
+        "arguments": [
+            {
+                "data": "r1",
+                "address_mode": "register"
+            },
+            {
+                "data": -14,
+                "address_mode": "relative"
+            }
+        ]
+    },
+    {
+        "instruction_code": "st",
+        "position": 19,
+        "arguments": [
+            {
+                "data": 1,
+                "address_mode": "absolute"
+            },
+            {
+                "data": "r1",
+                "address_mode": "register"
+            }
+        ]
+    },
+    {
+        "instruction_code": "ld",
+        "position": 20,
+        "arguments": [
+            {
+                "data": "r1",
+                "address_mode": "register"
+            },
+            {
+                "data": -15,
+                "address_mode": "relative"
+            }
+        ]
+    },
+    {
+        "instruction_code": "st",
+        "position": 21,
+        "arguments": [
+            {
+                "data": 1,
+                "address_mode": "absolute"
+            },
+            {
+                "data": "r1",
+                "address_mode": "register"
+            }
+        ]
+    },
+    {
+        "instruction_code": "ld",
+        "position": 22,
+        "arguments": [
+            {
+                "data": "r1",
+                "address_mode": "register"
+            },
+            {
+                "data": -16,
+                "address_mode": "relative"
+            }
+        ]
+    },
+    {
+        "instruction_code": "st",
+        "position": 23,
+        "arguments": [
+            {
+                "data": 1,
+                "address_mode": "absolute"
+            },
+            {
+                "data": "r1",
+                "address_mode": "register"
+            }
+        ]
+    },
+    {
+        "instruction_code": "ld",
+        "position": 24,
+        "arguments": [
+            {
+                "data": "r1",
+                "address_mode": "register"
+            },
+            {
+                "data": -20,
+                "address_mode": "relative"
+            }
+        ]
+    },
+    {
+        "instruction_code": "st",
+        "position": 25,
+        "arguments": [
+            {
+                "data": 1,
+                "address_mode": "absolute"
+            },
+            {
+                "data": "r1",
+                "address_mode": "register"
+            }
+        ]
+    },
+    {
+        "instruction_code": "ld",
+        "position": 26,
+        "arguments": [
+            {
+                "data": "r1",
+                "address_mode": "register"
+            },
+            {
+                "data": -19,
+                "address_mode": "relative"
+            }
+        ]
+    },
+    {
+        "instruction_code": "st",
+        "position": 27,
+        "arguments": [
+            {
+                "data": 1,
+                "address_mode": "absolute"
+            },
+            {
+                "data": "r1",
+                "address_mode": "register"
+            }
+        ]
+    },
+    {
+        "instruction_code": "ld",
+        "position": 28,
+        "arguments": [
+            {
+                "data": "r1",
+                "address_mode": "register"
+            },
+            {
+                "data": -25,
+                "address_mode": "relative"
+            }
+        ]
+    },
+    {
+        "instruction_code": "st",
+        "position": 29,
+        "arguments": [
+            {
+                "data": 1,
+                "address_mode": "absolute"
+            },
+            {
+                "data": "r1",
+                "address_mode": "register"
+            }
+        ]
+    },
+    {
+        "instruction_code": "ld",
+        "position": 30,
+        "arguments": [
+            {
+                "data": "r1",
+                "address_mode": "register"
+            },
+            {
+                "data": -22,
+                "address_mode": "relative"
+            }
+        ]
+    },
+    {
+        "instruction_code": "st",
+        "position": 31,
+        "arguments": [
+            {
+                "data": 1,
+                "address_mode": "absolute"
+            },
+            {
+                "data": "r1",
+                "address_mode": "register"
+            }
+        ]
+    },
+    {
+        "instruction_code": "ld",
+        "position": 32,
+        "arguments": [
+            {
+                "data": "r1",
+                "address_mode": "register"
+            },
+            {
+                "data": -23,
+                "address_mode": "relative"
+            }
+        ]
+    },
+    {
+        "instruction_code": "st",
+        "position": 33,
+        "arguments": [
+            {
+                "data": 1,
+                "address_mode": "absolute"
+            },
+            {
+                "data": "r1",
+                "address_mode": "register"
+            }
+        ]
+    },
+    {
+        "instruction_code": "hlt",
+        "position": 34,
+        "arguments": []
+    }
+]

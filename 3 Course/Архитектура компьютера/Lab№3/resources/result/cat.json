@@ -1,0 +1,50 @@
+[
+    {
+        "instruction_code": "jmp",
+        "position": 0,
+        "arguments": [
+            {
+                "data": 1,
+                "address_mode": "relative"
+            }
+        ]
+    },
+    {
+        "instruction_code": "ld",
+        "position": 1,
+        "arguments": [
+            {
+                "data": "r2",
+                "address_mode": "register"
+            },
+            {
+                "data": 0,
+                "address_mode": "absolute"
+            }
+        ]
+    },
+    {
+        "instruction_code": "st",
+        "position": 2,
+        "arguments": [
+            {
+                "data": 1,
+                "address_mode": "absolute"
+            },
+            {
+                "data": "r2",
+                "address_mode": "register"
+            }
+        ]
+    },
+    {
+        "instruction_code": "jmp",
+        "position": 3,
+        "arguments": [
+            {
+                "data": -2,
+                "address_mode": "relative"
+            }
+        ]
+    }
+]

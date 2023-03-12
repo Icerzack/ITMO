@@ -1,0 +1,220 @@
+source: |-
+  section .text
+  .start:
+      .read_char:
+          LD %r2, #STDIN
+          ST #STDOUT, %r2
+          JMP .read_char
+input: |-
+  Maxim Kuz
+code: |-
+  [
+      {
+          "instruction_code": "jmp",
+          "position": 0,
+          "arguments": [
+              {
+                  "data": 1,
+                  "address_mode": "relative"
+              }
+          ]
+      },
+      {
+          "instruction_code": "ld",
+          "position": 1,
+          "arguments": [
+              {
+                  "data": "r2",
+                  "address_mode": "register"
+              },
+              {
+                  "data": 0,
+                  "address_mode": "absolute"
+              }
+          ]
+      },
+      {
+          "instruction_code": "st",
+          "position": 2,
+          "arguments": [
+              {
+                  "data": 1,
+                  "address_mode": "absolute"
+              },
+              {
+                  "data": "r2",
+                  "address_mode": "register"
+              }
+          ]
+      },
+      {
+          "instruction_code": "jmp",
+          "position": 3,
+          "arguments": [
+              {
+                  "data": -2,
+                  "address_mode": "relative"
+              }
+          ]
+      }
+  ]
+output: |-
+  source LoC: 6 instr: 4
+  ============================================================
+  Output:
+  77(M) 97(a) 120(x) 105(i) 109(m) 32( ) 75(K) 117(u) 122(z) 
+  instr_counter: 29 ticks: 77
+log: |
+  DEBUG    root:machine.py:370 TICK: 0, PC: 2, ADDR_BUS: 0, R1: 0, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 0, MEM_BUS: 0, Z: False, P: False, STEP_COUNTER: 0 -
+  DEBUG    root:machine.py:377 TICK: 1, PC: 2, ADDR_BUS: 0, R1: 0, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 0, MEM_BUS: 0, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 2, OPCODE: JMP, ARGS: [('relative', 1)]
+  DEBUG    root:machine.py:377 TICK: 2, PC: 2, ADDR_BUS: 0, R1: 0, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 0, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 2, OPCODE: JMP, ARGS: [('relative', 1)]
+  DEBUG    root:machine.py:377 TICK: 3, PC: 3, ADDR_BUS: 0, R1: 0, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 0, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 2, OPCODE: JMP, ARGS: [('relative', 1)]
+  DEBUG    root:machine.py:377 TICK: 4, PC: 3, ADDR_BUS: 0, R1: 0, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 0, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 3, OPCODE: LD, ARGS: [('register', <Register.R2: 'r2'>), ('absolute', 0)]
+  DEBUG    root:machine.py:377 TICK: 5, PC: 3, ADDR_BUS: 0, R1: 0, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 77, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 3, OPCODE: LD, ARGS: [('register', <Register.R2: 'r2'>), ('absolute', 0)]
+  DEBUG    root:machine.py:377 TICK: 6, PC: 4, ADDR_BUS: 0, R1: 0, R2: 77, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 77, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 3, OPCODE: LD, ARGS: [('register', <Register.R2: 'r2'>), ('absolute', 0)]
+  DEBUG    root:machine.py:377 TICK: 7, PC: 4, ADDR_BUS: 0, R1: 0, R2: 77, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 77, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 4, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R2: 'r2'>)]
+  DEBUG    root:machine.py:377 TICK: 8, PC: 5, ADDR_BUS: 1, R1: 0, R2: 77, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 77, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 4, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R2: 'r2'>)]
+  DEBUG    root:machine.py:377 TICK: 9, PC: 5, ADDR_BUS: 1, R1: 0, R2: 77, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 77, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 5, OPCODE: JMP, ARGS: [('relative', -2)]
+  DEBUG    root:machine.py:377 TICK: 10, PC: 5, ADDR_BUS: 1, R1: 0, R2: 77, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 77, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 5, OPCODE: JMP, ARGS: [('relative', -2)]
+  DEBUG    root:machine.py:377 TICK: 11, PC: 3, ADDR_BUS: 1, R1: 0, R2: 77, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 77, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 5, OPCODE: JMP, ARGS: [('relative', -2)]
+  DEBUG    root:machine.py:377 TICK: 12, PC: 3, ADDR_BUS: 1, R1: 0, R2: 77, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 77, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 3, OPCODE: LD, ARGS: [('register', <Register.R2: 'r2'>), ('absolute', 0)]
+  DEBUG    root:machine.py:377 TICK: 13, PC: 3, ADDR_BUS: 0, R1: 0, R2: 77, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 97, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 3, OPCODE: LD, ARGS: [('register', <Register.R2: 'r2'>), ('absolute', 0)]
+  DEBUG    root:machine.py:377 TICK: 14, PC: 4, ADDR_BUS: 0, R1: 0, R2: 97, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 97, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 3, OPCODE: LD, ARGS: [('register', <Register.R2: 'r2'>), ('absolute', 0)]
+  DEBUG    root:machine.py:377 TICK: 15, PC: 4, ADDR_BUS: 0, R1: 0, R2: 97, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 97, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 4, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R2: 'r2'>)]
+  DEBUG    root:machine.py:377 TICK: 16, PC: 5, ADDR_BUS: 1, R1: 0, R2: 97, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 97, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 4, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R2: 'r2'>)]
+  DEBUG    root:machine.py:377 TICK: 17, PC: 5, ADDR_BUS: 1, R1: 0, R2: 97, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 97, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 5, OPCODE: JMP, ARGS: [('relative', -2)]
+  DEBUG    root:machine.py:377 TICK: 18, PC: 5, ADDR_BUS: 1, R1: 0, R2: 97, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 97, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 5, OPCODE: JMP, ARGS: [('relative', -2)]
+  DEBUG    root:machine.py:377 TICK: 19, PC: 3, ADDR_BUS: 1, R1: 0, R2: 97, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 97, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 5, OPCODE: JMP, ARGS: [('relative', -2)]
+  DEBUG    root:machine.py:377 TICK: 20, PC: 3, ADDR_BUS: 1, R1: 0, R2: 97, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 97, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 3, OPCODE: LD, ARGS: [('register', <Register.R2: 'r2'>), ('absolute', 0)]
+  DEBUG    root:machine.py:377 TICK: 21, PC: 3, ADDR_BUS: 0, R1: 0, R2: 97, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 120, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 3, OPCODE: LD, ARGS: [('register', <Register.R2: 'r2'>), ('absolute', 0)]
+  DEBUG    root:machine.py:377 TICK: 22, PC: 4, ADDR_BUS: 0, R1: 0, R2: 120, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 120, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 3, OPCODE: LD, ARGS: [('register', <Register.R2: 'r2'>), ('absolute', 0)]
+  DEBUG    root:machine.py:377 TICK: 23, PC: 4, ADDR_BUS: 0, R1: 0, R2: 120, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 120, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 4, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R2: 'r2'>)]
+  DEBUG    root:machine.py:377 TICK: 24, PC: 5, ADDR_BUS: 1, R1: 0, R2: 120, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 120, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 4, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R2: 'r2'>)]
+  DEBUG    root:machine.py:377 TICK: 25, PC: 5, ADDR_BUS: 1, R1: 0, R2: 120, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 120, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 5, OPCODE: JMP, ARGS: [('relative', -2)]
+  DEBUG    root:machine.py:377 TICK: 26, PC: 5, ADDR_BUS: 1, R1: 0, R2: 120, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 120, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 5, OPCODE: JMP, ARGS: [('relative', -2)]
+  DEBUG    root:machine.py:377 TICK: 27, PC: 3, ADDR_BUS: 1, R1: 0, R2: 120, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 120, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 5, OPCODE: JMP, ARGS: [('relative', -2)]
+  DEBUG    root:machine.py:377 TICK: 28, PC: 3, ADDR_BUS: 1, R1: 0, R2: 120, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 120, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 3, OPCODE: LD, ARGS: [('register', <Register.R2: 'r2'>), ('absolute', 0)]
+  DEBUG    root:machine.py:377 TICK: 29, PC: 3, ADDR_BUS: 0, R1: 0, R2: 120, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 105, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 3, OPCODE: LD, ARGS: [('register', <Register.R2: 'r2'>), ('absolute', 0)]
+  DEBUG    root:machine.py:377 TICK: 30, PC: 4, ADDR_BUS: 0, R1: 0, R2: 105, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 105, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 3, OPCODE: LD, ARGS: [('register', <Register.R2: 'r2'>), ('absolute', 0)]
+  DEBUG    root:machine.py:377 TICK: 31, PC: 4, ADDR_BUS: 0, R1: 0, R2: 105, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 105, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 4, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R2: 'r2'>)]
+  DEBUG    root:machine.py:377 TICK: 32, PC: 5, ADDR_BUS: 1, R1: 0, R2: 105, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 105, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 4, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R2: 'r2'>)]
+  DEBUG    root:machine.py:377 TICK: 33, PC: 5, ADDR_BUS: 1, R1: 0, R2: 105, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 105, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 5, OPCODE: JMP, ARGS: [('relative', -2)]
+  DEBUG    root:machine.py:377 TICK: 34, PC: 5, ADDR_BUS: 1, R1: 0, R2: 105, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 105, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 5, OPCODE: JMP, ARGS: [('relative', -2)]
+  DEBUG    root:machine.py:377 TICK: 35, PC: 3, ADDR_BUS: 1, R1: 0, R2: 105, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 105, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 5, OPCODE: JMP, ARGS: [('relative', -2)]
+  DEBUG    root:machine.py:377 TICK: 36, PC: 3, ADDR_BUS: 1, R1: 0, R2: 105, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 105, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 3, OPCODE: LD, ARGS: [('register', <Register.R2: 'r2'>), ('absolute', 0)]
+  DEBUG    root:machine.py:377 TICK: 37, PC: 3, ADDR_BUS: 0, R1: 0, R2: 105, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 109, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 3, OPCODE: LD, ARGS: [('register', <Register.R2: 'r2'>), ('absolute', 0)]
+  DEBUG    root:machine.py:377 TICK: 38, PC: 4, ADDR_BUS: 0, R1: 0, R2: 109, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 109, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 3, OPCODE: LD, ARGS: [('register', <Register.R2: 'r2'>), ('absolute', 0)]
+  DEBUG    root:machine.py:377 TICK: 39, PC: 4, ADDR_BUS: 0, R1: 0, R2: 109, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 109, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 4, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R2: 'r2'>)]
+  DEBUG    root:machine.py:377 TICK: 40, PC: 5, ADDR_BUS: 1, R1: 0, R2: 109, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 109, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 4, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R2: 'r2'>)]
+  DEBUG    root:machine.py:377 TICK: 41, PC: 5, ADDR_BUS: 1, R1: 0, R2: 109, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 109, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 5, OPCODE: JMP, ARGS: [('relative', -2)]
+  DEBUG    root:machine.py:377 TICK: 42, PC: 5, ADDR_BUS: 1, R1: 0, R2: 109, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 109, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 5, OPCODE: JMP, ARGS: [('relative', -2)]
+  DEBUG    root:machine.py:377 TICK: 43, PC: 3, ADDR_BUS: 1, R1: 0, R2: 109, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 109, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 5, OPCODE: JMP, ARGS: [('relative', -2)]
+  DEBUG    root:machine.py:377 TICK: 44, PC: 3, ADDR_BUS: 1, R1: 0, R2: 109, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 109, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 3, OPCODE: LD, ARGS: [('register', <Register.R2: 'r2'>), ('absolute', 0)]
+  DEBUG    root:machine.py:377 TICK: 45, PC: 3, ADDR_BUS: 0, R1: 0, R2: 109, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 32, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 3, OPCODE: LD, ARGS: [('register', <Register.R2: 'r2'>), ('absolute', 0)]
+  DEBUG    root:machine.py:377 TICK: 46, PC: 4, ADDR_BUS: 0, R1: 0, R2: 32, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 32, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 3, OPCODE: LD, ARGS: [('register', <Register.R2: 'r2'>), ('absolute', 0)]
+  DEBUG    root:machine.py:377 TICK: 47, PC: 4, ADDR_BUS: 0, R1: 0, R2: 32, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 32, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 4, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R2: 'r2'>)]
+  DEBUG    root:machine.py:377 TICK: 48, PC: 5, ADDR_BUS: 1, R1: 0, R2: 32, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 32, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 4, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R2: 'r2'>)]
+  DEBUG    root:machine.py:377 TICK: 49, PC: 5, ADDR_BUS: 1, R1: 0, R2: 32, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 32, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 5, OPCODE: JMP, ARGS: [('relative', -2)]
+  DEBUG    root:machine.py:377 TICK: 50, PC: 5, ADDR_BUS: 1, R1: 0, R2: 32, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 32, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 5, OPCODE: JMP, ARGS: [('relative', -2)]
+  DEBUG    root:machine.py:377 TICK: 51, PC: 3, ADDR_BUS: 1, R1: 0, R2: 32, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 32, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 5, OPCODE: JMP, ARGS: [('relative', -2)]
+  DEBUG    root:machine.py:377 TICK: 52, PC: 3, ADDR_BUS: 1, R1: 0, R2: 32, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 32, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 3, OPCODE: LD, ARGS: [('register', <Register.R2: 'r2'>), ('absolute', 0)]
+  DEBUG    root:machine.py:377 TICK: 53, PC: 3, ADDR_BUS: 0, R1: 0, R2: 32, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 75, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 3, OPCODE: LD, ARGS: [('register', <Register.R2: 'r2'>), ('absolute', 0)]
+  DEBUG    root:machine.py:377 TICK: 54, PC: 4, ADDR_BUS: 0, R1: 0, R2: 75, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 75, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 3, OPCODE: LD, ARGS: [('register', <Register.R2: 'r2'>), ('absolute', 0)]
+  DEBUG    root:machine.py:377 TICK: 55, PC: 4, ADDR_BUS: 0, R1: 0, R2: 75, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 75, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 4, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R2: 'r2'>)]
+  DEBUG    root:machine.py:377 TICK: 56, PC: 5, ADDR_BUS: 1, R1: 0, R2: 75, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 75, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 4, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R2: 'r2'>)]
+  DEBUG    root:machine.py:377 TICK: 57, PC: 5, ADDR_BUS: 1, R1: 0, R2: 75, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 75, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 5, OPCODE: JMP, ARGS: [('relative', -2)]
+  DEBUG    root:machine.py:377 TICK: 58, PC: 5, ADDR_BUS: 1, R1: 0, R2: 75, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 75, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 5, OPCODE: JMP, ARGS: [('relative', -2)]
+  DEBUG    root:machine.py:377 TICK: 59, PC: 3, ADDR_BUS: 1, R1: 0, R2: 75, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 75, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 5, OPCODE: JMP, ARGS: [('relative', -2)]
+  DEBUG    root:machine.py:377 TICK: 60, PC: 3, ADDR_BUS: 1, R1: 0, R2: 75, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 75, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 3, OPCODE: LD, ARGS: [('register', <Register.R2: 'r2'>), ('absolute', 0)]
+  DEBUG    root:machine.py:377 TICK: 61, PC: 3, ADDR_BUS: 0, R1: 0, R2: 75, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 117, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 3, OPCODE: LD, ARGS: [('register', <Register.R2: 'r2'>), ('absolute', 0)]
+  DEBUG    root:machine.py:377 TICK: 62, PC: 4, ADDR_BUS: 0, R1: 0, R2: 117, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 117, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 3, OPCODE: LD, ARGS: [('register', <Register.R2: 'r2'>), ('absolute', 0)]
+  DEBUG    root:machine.py:377 TICK: 63, PC: 4, ADDR_BUS: 0, R1: 0, R2: 117, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 117, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 4, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R2: 'r2'>)]
+  DEBUG    root:machine.py:377 TICK: 64, PC: 5, ADDR_BUS: 1, R1: 0, R2: 117, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 117, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 4, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R2: 'r2'>)]
+  DEBUG    root:machine.py:377 TICK: 65, PC: 5, ADDR_BUS: 1, R1: 0, R2: 117, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 117, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 5, OPCODE: JMP, ARGS: [('relative', -2)]
+  DEBUG    root:machine.py:377 TICK: 66, PC: 5, ADDR_BUS: 1, R1: 0, R2: 117, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 117, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 5, OPCODE: JMP, ARGS: [('relative', -2)]
+  DEBUG    root:machine.py:377 TICK: 67, PC: 3, ADDR_BUS: 1, R1: 0, R2: 117, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 117, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 5, OPCODE: JMP, ARGS: [('relative', -2)]
+  DEBUG    root:machine.py:377 TICK: 68, PC: 3, ADDR_BUS: 1, R1: 0, R2: 117, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 117, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 3, OPCODE: LD, ARGS: [('register', <Register.R2: 'r2'>), ('absolute', 0)]
+  DEBUG    root:machine.py:377 TICK: 69, PC: 3, ADDR_BUS: 0, R1: 0, R2: 117, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 122, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 3, OPCODE: LD, ARGS: [('register', <Register.R2: 'r2'>), ('absolute', 0)]
+  DEBUG    root:machine.py:377 TICK: 70, PC: 4, ADDR_BUS: 0, R1: 0, R2: 122, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 122, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 3, OPCODE: LD, ARGS: [('register', <Register.R2: 'r2'>), ('absolute', 0)]
+  DEBUG    root:machine.py:377 TICK: 71, PC: 4, ADDR_BUS: 0, R1: 0, R2: 122, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 122, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 4, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R2: 'r2'>)]
+  DEBUG    root:machine.py:377 TICK: 72, PC: 5, ADDR_BUS: 1, R1: 0, R2: 122, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 122, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 4, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R2: 'r2'>)]
+  DEBUG    root:machine.py:377 TICK: 73, PC: 5, ADDR_BUS: 1, R1: 0, R2: 122, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 122, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 5, OPCODE: JMP, ARGS: [('relative', -2)]
+  DEBUG    root:machine.py:377 TICK: 74, PC: 5, ADDR_BUS: 1, R1: 0, R2: 122, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 122, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 5, OPCODE: JMP, ARGS: [('relative', -2)]
+  DEBUG    root:machine.py:377 TICK: 75, PC: 3, ADDR_BUS: 1, R1: 0, R2: 122, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 122, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 5, OPCODE: JMP, ARGS: [('relative', -2)]
+  DEBUG    root:machine.py:377 TICK: 76, PC: 3, ADDR_BUS: 1, R1: 0, R2: 122, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 122, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 3, OPCODE: LD, ARGS: [('register', <Register.R2: 'r2'>), ('absolute', 0)]

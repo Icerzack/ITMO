@@ -1,0 +1,652 @@
+source: |-
+  section .data
+      H: 'h'
+      E: 'e'
+      L: 'l'
+      O: 'o'
+      space: ' '
+      W: 'w'
+      R: 'r'
+      D: 'd'
+      !: '!'
+  section .text
+  .start:
+        LD %r1, (H)
+        ST #STDOUT, %r1
+        LD %r1, (E)
+        ST #STDOUT, %r1
+        LD %r1, (L)
+        ST #STDOUT, %r1
+        LD %r1, (L)
+        ST #STDOUT, %r1
+        LD %r1, (O)
+        ST #STDOUT, %r1
+        LD %r1, (space)
+        ST #STDOUT, %r1
+        LD %r1, (W)
+        ST #STDOUT, %r1
+        LD %r1, (O)
+        ST #STDOUT, %r1
+        LD %r1, (R)
+        ST #STDOUT, %r1
+        LD %r1, (L)
+        ST #STDOUT, %r1
+        LD %r1, (D)
+        ST #STDOUT, %r1
+        LD %r1, (!)
+        ST #STDOUT, %r1
+        HLT
+input: |-
+  []
+code: |-
+  [
+      {
+          "instruction_code": "jmp",
+          "position": 0,
+          "arguments": [
+              {
+                  "data": 10,
+                  "address_mode": "relative"
+              }
+          ]
+      },
+      {
+          "instruction_code": "data",
+          "position": 1,
+          "arguments": [
+              {
+                  "data": 104,
+                  "address_mode": "data"
+              }
+          ]
+      },
+      {
+          "instruction_code": "data",
+          "position": 2,
+          "arguments": [
+              {
+                  "data": 101,
+                  "address_mode": "data"
+              }
+          ]
+      },
+      {
+          "instruction_code": "data",
+          "position": 3,
+          "arguments": [
+              {
+                  "data": 108,
+                  "address_mode": "data"
+              }
+          ]
+      },
+      {
+          "instruction_code": "data",
+          "position": 4,
+          "arguments": [
+              {
+                  "data": 111,
+                  "address_mode": "data"
+              }
+          ]
+      },
+      {
+          "instruction_code": "data",
+          "position": 5,
+          "arguments": [
+              {
+                  "data": 32,
+                  "address_mode": "data"
+              }
+          ]
+      },
+      {
+          "instruction_code": "data",
+          "position": 6,
+          "arguments": [
+              {
+                  "data": 119,
+                  "address_mode": "data"
+              }
+          ]
+      },
+      {
+          "instruction_code": "data",
+          "position": 7,
+          "arguments": [
+              {
+                  "data": 114,
+                  "address_mode": "data"
+              }
+          ]
+      },
+      {
+          "instruction_code": "data",
+          "position": 8,
+          "arguments": [
+              {
+                  "data": 100,
+                  "address_mode": "data"
+              }
+          ]
+      },
+      {
+          "instruction_code": "data",
+          "position": 9,
+          "arguments": [
+              {
+                  "data": 33,
+                  "address_mode": "data"
+              }
+          ]
+      },
+      {
+          "instruction_code": "ld",
+          "position": 10,
+          "arguments": [
+              {
+                  "data": "r1",
+                  "address_mode": "register"
+              },
+              {
+                  "data": -9,
+                  "address_mode": "relative"
+              }
+          ]
+      },
+      {
+          "instruction_code": "st",
+          "position": 11,
+          "arguments": [
+              {
+                  "data": 1,
+                  "address_mode": "absolute"
+              },
+              {
+                  "data": "r1",
+                  "address_mode": "register"
+              }
+          ]
+      },
+      {
+          "instruction_code": "ld",
+          "position": 12,
+          "arguments": [
+              {
+                  "data": "r1",
+                  "address_mode": "register"
+              },
+              {
+                  "data": -10,
+                  "address_mode": "relative"
+              }
+          ]
+      },
+      {
+          "instruction_code": "st",
+          "position": 13,
+          "arguments": [
+              {
+                  "data": 1,
+                  "address_mode": "absolute"
+              },
+              {
+                  "data": "r1",
+                  "address_mode": "register"
+              }
+          ]
+      },
+      {
+          "instruction_code": "ld",
+          "position": 14,
+          "arguments": [
+              {
+                  "data": "r1",
+                  "address_mode": "register"
+              },
+              {
+                  "data": -11,
+                  "address_mode": "relative"
+              }
+          ]
+      },
+      {
+          "instruction_code": "st",
+          "position": 15,
+          "arguments": [
+              {
+                  "data": 1,
+                  "address_mode": "absolute"
+              },
+              {
+                  "data": "r1",
+                  "address_mode": "register"
+              }
+          ]
+      },
+      {
+          "instruction_code": "ld",
+          "position": 16,
+          "arguments": [
+              {
+                  "data": "r1",
+                  "address_mode": "register"
+              },
+              {
+                  "data": -13,
+                  "address_mode": "relative"
+              }
+          ]
+      },
+      {
+          "instruction_code": "st",
+          "position": 17,
+          "arguments": [
+              {
+                  "data": 1,
+                  "address_mode": "absolute"
+              },
+              {
+                  "data": "r1",
+                  "address_mode": "register"
+              }
+          ]
+      },
+      {
+          "instruction_code": "ld",
+          "position": 18,
+          "arguments": [
+              {
+                  "data": "r1",
+                  "address_mode": "register"
+              },
+              {
+                  "data": -14,
+                  "address_mode": "relative"
+              }
+          ]
+      },
+      {
+          "instruction_code": "st",
+          "position": 19,
+          "arguments": [
+              {
+                  "data": 1,
+                  "address_mode": "absolute"
+              },
+              {
+                  "data": "r1",
+                  "address_mode": "register"
+              }
+          ]
+      },
+      {
+          "instruction_code": "ld",
+          "position": 20,
+          "arguments": [
+              {
+                  "data": "r1",
+                  "address_mode": "register"
+              },
+              {
+                  "data": -15,
+                  "address_mode": "relative"
+              }
+          ]
+      },
+      {
+          "instruction_code": "st",
+          "position": 21,
+          "arguments": [
+              {
+                  "data": 1,
+                  "address_mode": "absolute"
+              },
+              {
+                  "data": "r1",
+                  "address_mode": "register"
+              }
+          ]
+      },
+      {
+          "instruction_code": "ld",
+          "position": 22,
+          "arguments": [
+              {
+                  "data": "r1",
+                  "address_mode": "register"
+              },
+              {
+                  "data": -16,
+                  "address_mode": "relative"
+              }
+          ]
+      },
+      {
+          "instruction_code": "st",
+          "position": 23,
+          "arguments": [
+              {
+                  "data": 1,
+                  "address_mode": "absolute"
+              },
+              {
+                  "data": "r1",
+                  "address_mode": "register"
+              }
+          ]
+      },
+      {
+          "instruction_code": "ld",
+          "position": 24,
+          "arguments": [
+              {
+                  "data": "r1",
+                  "address_mode": "register"
+              },
+              {
+                  "data": -20,
+                  "address_mode": "relative"
+              }
+          ]
+      },
+      {
+          "instruction_code": "st",
+          "position": 25,
+          "arguments": [
+              {
+                  "data": 1,
+                  "address_mode": "absolute"
+              },
+              {
+                  "data": "r1",
+                  "address_mode": "register"
+              }
+          ]
+      },
+      {
+          "instruction_code": "ld",
+          "position": 26,
+          "arguments": [
+              {
+                  "data": "r1",
+                  "address_mode": "register"
+              },
+              {
+                  "data": -19,
+                  "address_mode": "relative"
+              }
+          ]
+      },
+      {
+          "instruction_code": "st",
+          "position": 27,
+          "arguments": [
+              {
+                  "data": 1,
+                  "address_mode": "absolute"
+              },
+              {
+                  "data": "r1",
+                  "address_mode": "register"
+              }
+          ]
+      },
+      {
+          "instruction_code": "ld",
+          "position": 28,
+          "arguments": [
+              {
+                  "data": "r1",
+                  "address_mode": "register"
+              },
+              {
+                  "data": -25,
+                  "address_mode": "relative"
+              }
+          ]
+      },
+      {
+          "instruction_code": "st",
+          "position": 29,
+          "arguments": [
+              {
+                  "data": 1,
+                  "address_mode": "absolute"
+              },
+              {
+                  "data": "r1",
+                  "address_mode": "register"
+              }
+          ]
+      },
+      {
+          "instruction_code": "ld",
+          "position": 30,
+          "arguments": [
+              {
+                  "data": "r1",
+                  "address_mode": "register"
+              },
+              {
+                  "data": -22,
+                  "address_mode": "relative"
+              }
+          ]
+      },
+      {
+          "instruction_code": "st",
+          "position": 31,
+          "arguments": [
+              {
+                  "data": 1,
+                  "address_mode": "absolute"
+              },
+              {
+                  "data": "r1",
+                  "address_mode": "register"
+              }
+          ]
+      },
+      {
+          "instruction_code": "ld",
+          "position": 32,
+          "arguments": [
+              {
+                  "data": "r1",
+                  "address_mode": "register"
+              },
+              {
+                  "data": -23,
+                  "address_mode": "relative"
+              }
+          ]
+      },
+      {
+          "instruction_code": "st",
+          "position": 33,
+          "arguments": [
+              {
+                  "data": 1,
+                  "address_mode": "absolute"
+              },
+              {
+                  "data": "r1",
+                  "address_mode": "register"
+              }
+          ]
+      },
+      {
+          "instruction_code": "hlt",
+          "position": 34,
+          "arguments": []
+      }
+  ]
+output: |-
+  'h'
+  'e'
+  'l'
+  'o'
+  'w'
+  'r'
+  'd'
+  '!'
+  source LoC: 37 instr: 35
+  ============================================================
+  Output:
+  104(h) 101(e) 108(l) 108(l) 111(o) 32( ) 119(w) 111(o) 114(r) 108(l) 100(d) 33(!) 
+  instr_counter: 26 ticks: 77
+log: |
+  DEBUG    root:machine.py:370 TICK: 0, PC: 2, ADDR_BUS: 0, R1: 0, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 0, MEM_BUS: 0, Z: False, P: False, STEP_COUNTER: 0 -
+  DEBUG    root:machine.py:377 TICK: 1, PC: 2, ADDR_BUS: 0, R1: 0, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 0, MEM_BUS: 0, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 2, OPCODE: JMP, ARGS: [('relative', 10)]
+  DEBUG    root:machine.py:377 TICK: 2, PC: 2, ADDR_BUS: 0, R1: 0, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 12, MEM_BUS: 0, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 2, OPCODE: JMP, ARGS: [('relative', 10)]
+  DEBUG    root:machine.py:377 TICK: 3, PC: 12, ADDR_BUS: 0, R1: 0, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 12, MEM_BUS: 0, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 2, OPCODE: JMP, ARGS: [('relative', 10)]
+  DEBUG    root:machine.py:377 TICK: 4, PC: 12, ADDR_BUS: 0, R1: 0, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 12, MEM_BUS: 0, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 12, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -9)]
+  DEBUG    root:machine.py:377 TICK: 5, PC: 12, ADDR_BUS: 0, R1: 0, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 0, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 12, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -9)]
+  DEBUG    root:machine.py:377 TICK: 6, PC: 12, ADDR_BUS: 3, R1: 0, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 104, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 12, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -9)]
+  DEBUG    root:machine.py:377 TICK: 7, PC: 13, ADDR_BUS: 3, R1: 104, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 104, Z: False, P: False, STEP_COUNTER: 3 
+  CELL_NUMBER: 12, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -9)]
+  DEBUG    root:machine.py:377 TICK: 8, PC: 13, ADDR_BUS: 3, R1: 104, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 104, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 13, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R1: 'r1'>)]
+  DEBUG    root:machine.py:377 TICK: 9, PC: 14, ADDR_BUS: 1, R1: 104, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 104, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 13, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R1: 'r1'>)]
+  DEBUG    root:machine.py:377 TICK: 10, PC: 14, ADDR_BUS: 1, R1: 104, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 3, MEM_BUS: 104, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 14, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -10)]
+  DEBUG    root:machine.py:377 TICK: 11, PC: 14, ADDR_BUS: 1, R1: 104, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 4, MEM_BUS: 104, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 14, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -10)]
+  DEBUG    root:machine.py:377 TICK: 12, PC: 14, ADDR_BUS: 4, R1: 104, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 4, MEM_BUS: 101, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 14, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -10)]
+  DEBUG    root:machine.py:377 TICK: 13, PC: 15, ADDR_BUS: 4, R1: 101, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 4, MEM_BUS: 101, Z: False, P: False, STEP_COUNTER: 3 
+  CELL_NUMBER: 14, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -10)]
+  DEBUG    root:machine.py:377 TICK: 14, PC: 15, ADDR_BUS: 4, R1: 101, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 4, MEM_BUS: 101, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 15, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R1: 'r1'>)]
+  DEBUG    root:machine.py:377 TICK: 15, PC: 16, ADDR_BUS: 1, R1: 101, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 4, MEM_BUS: 101, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 15, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R1: 'r1'>)]
+  DEBUG    root:machine.py:377 TICK: 16, PC: 16, ADDR_BUS: 1, R1: 101, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 4, MEM_BUS: 101, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 16, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -11)]
+  DEBUG    root:machine.py:377 TICK: 17, PC: 16, ADDR_BUS: 1, R1: 101, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 5, MEM_BUS: 101, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 16, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -11)]
+  DEBUG    root:machine.py:377 TICK: 18, PC: 16, ADDR_BUS: 5, R1: 101, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 5, MEM_BUS: 108, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 16, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -11)]
+  DEBUG    root:machine.py:377 TICK: 19, PC: 17, ADDR_BUS: 5, R1: 108, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 5, MEM_BUS: 108, Z: False, P: False, STEP_COUNTER: 3 
+  CELL_NUMBER: 16, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -11)]
+  DEBUG    root:machine.py:377 TICK: 20, PC: 17, ADDR_BUS: 5, R1: 108, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 5, MEM_BUS: 108, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 17, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R1: 'r1'>)]
+  DEBUG    root:machine.py:377 TICK: 21, PC: 18, ADDR_BUS: 1, R1: 108, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 5, MEM_BUS: 108, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 17, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R1: 'r1'>)]
+  DEBUG    root:machine.py:377 TICK: 22, PC: 18, ADDR_BUS: 1, R1: 108, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 5, MEM_BUS: 108, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 18, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -13)]
+  DEBUG    root:machine.py:377 TICK: 23, PC: 18, ADDR_BUS: 1, R1: 108, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 5, MEM_BUS: 108, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 18, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -13)]
+  DEBUG    root:machine.py:377 TICK: 24, PC: 18, ADDR_BUS: 5, R1: 108, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 5, MEM_BUS: 108, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 18, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -13)]
+  DEBUG    root:machine.py:377 TICK: 25, PC: 19, ADDR_BUS: 5, R1: 108, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 5, MEM_BUS: 108, Z: False, P: False, STEP_COUNTER: 3 
+  CELL_NUMBER: 18, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -13)]
+  DEBUG    root:machine.py:377 TICK: 26, PC: 19, ADDR_BUS: 5, R1: 108, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 5, MEM_BUS: 108, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 19, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R1: 'r1'>)]
+  DEBUG    root:machine.py:377 TICK: 27, PC: 20, ADDR_BUS: 1, R1: 108, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 5, MEM_BUS: 108, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 19, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R1: 'r1'>)]
+  DEBUG    root:machine.py:377 TICK: 28, PC: 20, ADDR_BUS: 1, R1: 108, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 5, MEM_BUS: 108, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 20, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -14)]
+  DEBUG    root:machine.py:377 TICK: 29, PC: 20, ADDR_BUS: 1, R1: 108, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 6, MEM_BUS: 108, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 20, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -14)]
+  DEBUG    root:machine.py:377 TICK: 30, PC: 20, ADDR_BUS: 6, R1: 108, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 6, MEM_BUS: 111, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 20, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -14)]
+  DEBUG    root:machine.py:377 TICK: 31, PC: 21, ADDR_BUS: 6, R1: 111, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 6, MEM_BUS: 111, Z: False, P: False, STEP_COUNTER: 3 
+  CELL_NUMBER: 20, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -14)]
+  DEBUG    root:machine.py:377 TICK: 32, PC: 21, ADDR_BUS: 6, R1: 111, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 6, MEM_BUS: 111, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 21, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R1: 'r1'>)]
+  DEBUG    root:machine.py:377 TICK: 33, PC: 22, ADDR_BUS: 1, R1: 111, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 6, MEM_BUS: 111, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 21, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R1: 'r1'>)]
+  DEBUG    root:machine.py:377 TICK: 34, PC: 22, ADDR_BUS: 1, R1: 111, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 6, MEM_BUS: 111, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 22, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -15)]
+  DEBUG    root:machine.py:377 TICK: 35, PC: 22, ADDR_BUS: 1, R1: 111, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 7, MEM_BUS: 111, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 22, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -15)]
+  DEBUG    root:machine.py:377 TICK: 36, PC: 22, ADDR_BUS: 7, R1: 111, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 7, MEM_BUS: 32, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 22, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -15)]
+  DEBUG    root:machine.py:377 TICK: 37, PC: 23, ADDR_BUS: 7, R1: 32, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 7, MEM_BUS: 32, Z: False, P: False, STEP_COUNTER: 3 
+  CELL_NUMBER: 22, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -15)]
+  DEBUG    root:machine.py:377 TICK: 38, PC: 23, ADDR_BUS: 7, R1: 32, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 7, MEM_BUS: 32, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 23, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R1: 'r1'>)]
+  DEBUG    root:machine.py:377 TICK: 39, PC: 24, ADDR_BUS: 1, R1: 32, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 7, MEM_BUS: 32, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 23, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R1: 'r1'>)]
+  DEBUG    root:machine.py:377 TICK: 40, PC: 24, ADDR_BUS: 1, R1: 32, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 7, MEM_BUS: 32, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 24, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -16)]
+  DEBUG    root:machine.py:377 TICK: 41, PC: 24, ADDR_BUS: 1, R1: 32, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 8, MEM_BUS: 32, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 24, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -16)]
+  DEBUG    root:machine.py:377 TICK: 42, PC: 24, ADDR_BUS: 8, R1: 32, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 8, MEM_BUS: 119, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 24, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -16)]
+  DEBUG    root:machine.py:377 TICK: 43, PC: 25, ADDR_BUS: 8, R1: 119, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 8, MEM_BUS: 119, Z: False, P: False, STEP_COUNTER: 3 
+  CELL_NUMBER: 24, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -16)]
+  DEBUG    root:machine.py:377 TICK: 44, PC: 25, ADDR_BUS: 8, R1: 119, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 8, MEM_BUS: 119, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 25, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R1: 'r1'>)]
+  DEBUG    root:machine.py:377 TICK: 45, PC: 26, ADDR_BUS: 1, R1: 119, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 8, MEM_BUS: 119, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 25, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R1: 'r1'>)]
+  DEBUG    root:machine.py:377 TICK: 46, PC: 26, ADDR_BUS: 1, R1: 119, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 8, MEM_BUS: 119, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 26, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -20)]
+  DEBUG    root:machine.py:377 TICK: 47, PC: 26, ADDR_BUS: 1, R1: 119, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 6, MEM_BUS: 119, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 26, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -20)]
+  DEBUG    root:machine.py:377 TICK: 48, PC: 26, ADDR_BUS: 6, R1: 119, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 6, MEM_BUS: 111, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 26, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -20)]
+  DEBUG    root:machine.py:377 TICK: 49, PC: 27, ADDR_BUS: 6, R1: 111, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 6, MEM_BUS: 111, Z: False, P: False, STEP_COUNTER: 3 
+  CELL_NUMBER: 26, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -20)]
+  DEBUG    root:machine.py:377 TICK: 50, PC: 27, ADDR_BUS: 6, R1: 111, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 6, MEM_BUS: 111, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 27, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R1: 'r1'>)]
+  DEBUG    root:machine.py:377 TICK: 51, PC: 28, ADDR_BUS: 1, R1: 111, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 6, MEM_BUS: 111, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 27, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R1: 'r1'>)]
+  DEBUG    root:machine.py:377 TICK: 52, PC: 28, ADDR_BUS: 1, R1: 111, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 6, MEM_BUS: 111, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 28, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -19)]
+  DEBUG    root:machine.py:377 TICK: 53, PC: 28, ADDR_BUS: 1, R1: 111, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 9, MEM_BUS: 111, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 28, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -19)]
+  DEBUG    root:machine.py:377 TICK: 54, PC: 28, ADDR_BUS: 9, R1: 111, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 9, MEM_BUS: 114, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 28, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -19)]
+  DEBUG    root:machine.py:377 TICK: 55, PC: 29, ADDR_BUS: 9, R1: 114, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 9, MEM_BUS: 114, Z: False, P: False, STEP_COUNTER: 3 
+  CELL_NUMBER: 28, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -19)]
+  DEBUG    root:machine.py:377 TICK: 56, PC: 29, ADDR_BUS: 9, R1: 114, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 9, MEM_BUS: 114, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 29, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R1: 'r1'>)]
+  DEBUG    root:machine.py:377 TICK: 57, PC: 30, ADDR_BUS: 1, R1: 114, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 9, MEM_BUS: 114, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 29, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R1: 'r1'>)]
+  DEBUG    root:machine.py:377 TICK: 58, PC: 30, ADDR_BUS: 1, R1: 114, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 9, MEM_BUS: 114, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 30, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -25)]
+  DEBUG    root:machine.py:377 TICK: 59, PC: 30, ADDR_BUS: 1, R1: 114, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 5, MEM_BUS: 114, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 30, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -25)]
+  DEBUG    root:machine.py:377 TICK: 60, PC: 30, ADDR_BUS: 5, R1: 114, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 5, MEM_BUS: 108, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 30, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -25)]
+  DEBUG    root:machine.py:377 TICK: 61, PC: 31, ADDR_BUS: 5, R1: 108, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 5, MEM_BUS: 108, Z: False, P: False, STEP_COUNTER: 3 
+  CELL_NUMBER: 30, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -25)]
+  DEBUG    root:machine.py:377 TICK: 62, PC: 31, ADDR_BUS: 5, R1: 108, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 5, MEM_BUS: 108, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 31, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R1: 'r1'>)]
+  DEBUG    root:machine.py:377 TICK: 63, PC: 32, ADDR_BUS: 1, R1: 108, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 5, MEM_BUS: 108, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 31, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R1: 'r1'>)]
+  DEBUG    root:machine.py:377 TICK: 64, PC: 32, ADDR_BUS: 1, R1: 108, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 5, MEM_BUS: 108, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 32, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -22)]
+  DEBUG    root:machine.py:377 TICK: 65, PC: 32, ADDR_BUS: 1, R1: 108, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 10, MEM_BUS: 108, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 32, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -22)]
+  DEBUG    root:machine.py:377 TICK: 66, PC: 32, ADDR_BUS: 10, R1: 108, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 10, MEM_BUS: 100, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 32, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -22)]
+  DEBUG    root:machine.py:377 TICK: 67, PC: 33, ADDR_BUS: 10, R1: 100, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 10, MEM_BUS: 100, Z: False, P: False, STEP_COUNTER: 3 
+  CELL_NUMBER: 32, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -22)]
+  DEBUG    root:machine.py:377 TICK: 68, PC: 33, ADDR_BUS: 10, R1: 100, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 10, MEM_BUS: 100, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 33, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R1: 'r1'>)]
+  DEBUG    root:machine.py:377 TICK: 69, PC: 34, ADDR_BUS: 1, R1: 100, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 10, MEM_BUS: 100, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 33, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R1: 'r1'>)]
+  DEBUG    root:machine.py:377 TICK: 70, PC: 34, ADDR_BUS: 1, R1: 100, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 10, MEM_BUS: 100, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 34, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -23)]
+  DEBUG    root:machine.py:377 TICK: 71, PC: 34, ADDR_BUS: 1, R1: 100, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 11, MEM_BUS: 100, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 34, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -23)]
+  DEBUG    root:machine.py:377 TICK: 72, PC: 34, ADDR_BUS: 11, R1: 100, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 11, MEM_BUS: 33, Z: False, P: False, STEP_COUNTER: 2 
+  CELL_NUMBER: 34, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -23)]
+  DEBUG    root:machine.py:377 TICK: 73, PC: 35, ADDR_BUS: 11, R1: 33, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 11, MEM_BUS: 33, Z: False, P: False, STEP_COUNTER: 3 
+  CELL_NUMBER: 34, OPCODE: LD, ARGS: [('register', <Register.R1: 'r1'>), ('relative', -23)]
+  DEBUG    root:machine.py:377 TICK: 74, PC: 35, ADDR_BUS: 11, R1: 33, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 11, MEM_BUS: 33, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 35, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R1: 'r1'>)]
+  DEBUG    root:machine.py:377 TICK: 75, PC: 36, ADDR_BUS: 1, R1: 33, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 11, MEM_BUS: 33, Z: False, P: False, STEP_COUNTER: 1 
+  CELL_NUMBER: 35, OPCODE: ST, ARGS: [('absolute', 1), ('register', <Register.R1: 'r1'>)]
+  DEBUG    root:machine.py:377 TICK: 76, PC: 36, ADDR_BUS: 1, R1: 33, R2: 0, R3: 0, R4: 0, R5: 0, D_ALU_BUD: 0, A_ALU_BUD: 11, MEM_BUS: 33, Z: False, P: False, STEP_COUNTER: 0 
+  CELL_NUMBER: 36, OPCODE: HLT, ARGS: []
