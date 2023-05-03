@@ -1,0 +1,433 @@
+{
+  "id": "94c70405-d5d5-4f08-9a1b-8573032bacf7",
+  "version": "2.0",
+  "name": "TPOLab3",
+  "url": "https://www.tutu.ru",
+  "tests": [{
+    "id": "d7547dd6-8c98-46e9-92bf-5e42f179cbc3",
+    "name": "ToursPage",
+    "commands": [{
+      "id": "e1af89c0-1c72-4758-8126-3a3eb1919566",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d0c39b45-9400-4527-a450-1d4e4d4881dc",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1000x1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c395f3a6-5de9-4a87-9566-69a119d187ec",
+      "comment": "",
+      "command": "click",
+      "target": " xpath=//*[@id=\"react-hat-container\"]/div/div/div/div[3]/div[2]/div/nav/li[6]/a/span[2]",
+      "targets": [
+        ["linkText=Наши вакансии", "linkText"],
+        ["css=.footer_column:nth-child(4) > .list_item:nth-child(2) > .g-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Наши вакансии')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'https://company.tutu.ru/vacancy/')]", "xpath:href"],
+        ["xpath=//ul[3]/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Наши вакансии')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cc4d788a-d2cd-4d98-8797-9e2c3889b65c",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return window.location.href",
+      "targets": [],
+      "value": "url"
+    }, {
+      "id": "0977e6cb-1e3f-4e55-a791-5ed2d6830406",
+      "comment": "",
+      "command": "assert",
+      "target": "url",
+      "targets": [],
+      "value": "https://tours.tutu.ru/"
+    }]
+  }, {
+    "id": "214a8e18-117d-43ac-95e6-4ac91078d573",
+    "name": "GoPage",
+    "commands": [{
+      "id": "583ac9eb-f353-4e1f-a518-d3141dcb768d",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "24bef2a1-707a-4d74-baf7-858f3308d458",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1000x1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9314c1ca-0ffb-445c-ab4b-b8669b88aebc",
+      "comment": "",
+      "command": "click",
+      "target": " xpath=//*[@id=\"wrapper\"]/div[1]/div[4]/div[2]/div[2]",
+      "targets": [
+        ["linkText=Наши вакансии", "linkText"],
+        ["css=.footer_column:nth-child(4) > .list_item:nth-child(2) > .g-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Наши вакансии')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'https://company.tutu.ru/vacancy/')]", "xpath:href"],
+        ["xpath=//ul[3]/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Наши вакансии')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6ce78910-15b2-4ab4-a0a6-74f8d22493b4",
+      "comment": "",
+      "command": "click",
+      "target": " xpath=//*[@id=\"wrapper\"]/div[1]/div[4]/div[2]/div[3]/div[1]/a[1]",
+      "targets": [
+        ["linkText=Наши вакансии", "linkText"],
+        ["css=.footer_column:nth-child(4) > .list_item:nth-child(2) > .g-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Наши вакансии')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'https://company.tutu.ru/vacancy/')]", "xpath:href"],
+        ["xpath=//ul[3]/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Наши вакансии')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "41132cdd-1fc7-41f4-996d-bc2338e36e22",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return window.location.href",
+      "targets": [],
+      "value": "url"
+    }, {
+      "id": "b63a44b2-ec41-4e9e-b333-407755947a0f",
+      "comment": "",
+      "command": "assert",
+      "target": "url",
+      "targets": [],
+      "value": "https://go.tutu.ru/"
+    }]
+  }, {
+    "id": "801190b3-3e51-4775-b215-864e2b11b8a3",
+    "name": "HotelPage",
+    "commands": [{
+      "id": "1ed3bc53-f63c-4c90-9121-a86955d281cd",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "48b3c57a-351a-4ceb-bc30-b9d2857ac34f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1000x1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f259d77d-ab87-484f-acad-5df241aff601",
+      "comment": "",
+      "command": "click",
+      "target": " xpath=//*[@id=\"react-hat-container\"]/div/div/div/div[3]/div[2]/div/nav/li[4]/a/span[2]",
+      "targets": [
+        ["linkText=Наши вакансии", "linkText"],
+        ["css=.footer_column:nth-child(4) > .list_item:nth-child(2) > .g-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Наши вакансии')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'https://company.tutu.ru/vacancy/')]", "xpath:href"],
+        ["xpath=//ul[3]/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Наши вакансии')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5aff8280-65a5-4e2a-a9e6-01c51e79d880",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return window.location.href",
+      "targets": [],
+      "value": "url"
+    }, {
+      "id": "1cb6fea9-6e95-40f6-bb1f-64978d505366",
+      "comment": "",
+      "command": "assert",
+      "target": "url",
+      "targets": [],
+      "value": "https://hotel.tutu.ru/"
+    }]
+  }, {
+    "id": "025979bd-2a1c-4d99-a5c0-69d63ff0428d",
+    "name": "AeroexpressPage",
+    "commands": [{
+      "id": "30a24417-df9b-40b4-8786-90922f7879c5",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b58138b4-9fcb-4e6d-b69d-b0e1722f61d5",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1000x1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "750b0c74-995c-4ee3-bc4b-b8b138fbe8ac",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='wrapper']/div/div[4]/div[2]/div[2]",
+      "targets": [
+        ["css=.b-tab_more", "css:finder"],
+        ["xpath=//div[@id='wrapper']/div/div[4]/div[2]/div[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/div[2]/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1760cd18-72b7-40b9-ba30-81ab16268a74",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='wrapper']/div/div[4]/div[2]/div[3]/div/a[3]",
+      "targets": [
+        ["css=.tab_aeroexpress > .link", "css:finder"],
+        ["xpath=//div[@id='wrapper']/div/div[4]/div[2]/div[3]/div/a[2]/div[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/div/a[2]/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ceb5786-d896-453e-85c1-b34e33b732f1",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return window.location.href",
+      "targets": [],
+      "value": "url"
+    }, {
+      "id": "3e938d4a-40a3-4ce2-bcba-1fa6d068d090",
+      "comment": "",
+      "command": "assert",
+      "target": "url",
+      "targets": [],
+      "value": "https://aeroexpress.tutu.ru/"
+    }]
+  }, {
+    "id": "b2936e99-8e89-4daf-b015-e418d67389ce",
+    "name": "StoryPage",
+    "commands": [{
+      "id": "43847727-dfa5-4121-8366-825c76a929c6",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "aa012430-6f90-4ad8-8236-5b825bfe0684",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1000x1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9ab9f017-7a0b-46ab-8dc8-ad0b20cbd91c",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='react-hat-container']/div/div/div/div[3]/div[2]/div/nav/li[9]/a/span[2]",
+      "targets": [
+        ["css=.styles__navItem__3gAcM:nth-child(9) .styles__caption__26sCy", "css:finder"],
+        ["xpath=//div[@id='react-hat-container']/div/div/div/div[3]/div[2]/div/nav/li[9]/a/span[2]", "xpath:idRelative"],
+        ["xpath=//li[9]/a/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Сюжеты')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "601f156a-7fa3-4527-b135-87cd63a1e21a",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return window.location.href",
+      "targets": [],
+      "value": "url"
+    }, {
+      "id": "1a904d33-b88d-4ba8-8c94-26b2e00e621a",
+      "comment": "",
+      "command": "assert",
+      "target": "url",
+      "targets": [],
+      "value": "https://story.tutu.ru/"
+    }]
+  }, {
+    "id": "38f0020b-e08c-4c05-a547-45e4048d6d98",
+    "name": "BusPage",
+    "commands": [{
+      "id": "818cb01f-594f-480a-a884-9d4abf9b1a2d",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "15bc0e98-5833-434d-963c-aad80eb7cd48",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1000x1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bbc3d190-2760-4d78-b98f-8604026aa15d",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//*[@id=\"react-hat-container\"]/div/div/div/div[3]/div[2]/div/nav/li[3]/a/span[2]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "51002dac-55b8-484e-9f37-544f64233180",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return window.location.href",
+      "targets": [],
+      "value": "url"
+    }, {
+      "id": "28fc7676-4c48-4ebb-9e64-fff5729c78e3",
+      "comment": "",
+      "command": "assert",
+      "target": "url",
+      "targets": [],
+      "value": "https://bus.tutu.ru/"
+    }]
+  }, {
+    "id": "614175b3-e75c-4573-a2f3-4e15c06b13e8",
+    "name": "AviaPage",
+    "commands": [{
+      "id": "4ffae18c-890f-4424-84b0-38bd0a358151",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b50efff2-09cf-41a1-b5f0-0055520df3df",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1000x1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "71fad87a-8b1b-4214-a6f5-11a91d45a603",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//*[@id=\"react-hat-container\"]/div/div/div/div[3]/div[2]/div/nav/li[1]/a/span[2]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6ffbe0fa-2f2d-4618-bd8e-0a0bdb365aea",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return window.location.href",
+      "targets": [],
+      "value": "url"
+    }, {
+      "id": "fe136eec-4718-44bf-9280-4f696f10e8ba",
+      "comment": "",
+      "command": "assert",
+      "target": "url",
+      "targets": [],
+      "value": "https://avia.tutu.ru/"
+    }]
+  }, {
+    "id": "984c8ae4-e3ce-4c38-9eda-f8dc8b06e176",
+    "name": "PrigorodPage",
+    "commands": [{
+      "id": "485bd661-4945-4ea7-816d-17e6e5c7987e",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "93e61b8c-98fd-4d91-ae8b-eac40bc101df",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1000x1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0e4d2221-bb9f-4d6f-8e1b-768e58544f61",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='react-hat-container']/div/div/div/div[3]/div[2]/div/nav/li[5]/a/span[2]",
+      "targets": [
+        ["css=.styles__navItem__3gAcM:nth-child(5) .styles__caption__26sCy", "css:finder"],
+        ["xpath=//div[@id='react-hat-container']/div/div/div/div[3]/div[2]/div/nav/li[5]/a/span[2]", "xpath:idRelative"],
+        ["xpath=//li[5]/a/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Электрички')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "71f26272-8e8a-4a87-b773-02f19411aa22",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return window.location.href",
+      "targets": [],
+      "value": "url"
+    }, {
+      "id": "97397e9a-8249-45de-9e87-8bde671bad96",
+      "comment": "",
+      "command": "assert",
+      "target": "url",
+      "targets": [],
+      "value": "https://www.tutu.ru/prigorod/"
+    }]
+  }, {
+    "id": "2fc59dbe-c45f-4bef-9dd4-0dbe098af261",
+    "name": "TrainPage",
+    "commands": [{
+      "id": "2c27e8df-c776-488c-8f23-4f6e2cca7602",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3d7c8500-fe71-4546-893b-0d0031b593fc",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1000x1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5c55f610-68e8-4e33-91a6-5f34d2061a42",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//div[@id='react-hat-container']/div/div/div/div[3]/div[2]/div/nav/li[2]/a/span[2]",
+      "targets": [
+        ["css=.styles__navItem__3gAcM:nth-child(2) .styles__caption__26sCy", "css:finder"],
+        ["xpath=//div[@id='react-hat-container']/div/div/div/div[3]/div[2]/div/nav/li[2]/a/span[2]", "xpath:idRelative"],
+        ["xpath=//li[2]/a/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Ж/д билеты')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "df9025c6-0da4-4c4e-af10-b0cb23d7296f",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return window.location.href",
+      "targets": [],
+      "value": "url"
+    }, {
+      "id": "aeb10107-7392-4978-a9ce-9017277771c6",
+      "comment": "",
+      "command": "assert",
+      "target": "url",
+      "targets": [],
+      "value": "https://www.tutu.ru/poezda/"
+    }]
+  }],
+  "suites": [{
+    "id": "2384aa7f-1567-4ed1-a4e6-302af5ab2323",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://www.tutu.ru/"],
+  "plugins": []
+}
