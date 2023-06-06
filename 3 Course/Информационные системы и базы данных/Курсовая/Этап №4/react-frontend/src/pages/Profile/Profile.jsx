@@ -16,6 +16,7 @@ import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import { useParams } from "react-router-dom";
 import { preparationsList } from "../../helpers/preparations";
 import { baaList } from "../../helpers/baa";
+import DisplayCard from "../../components/card";
 
 export default function Profile() {
   const [birthDate, setBirthDate] = React.useState(dayjs("2022-01-12"));
@@ -155,7 +156,6 @@ export default function Profile() {
                   key={element.id}
                   name={element.id}
                   title={element.name}
-                  onCardClick={handleCardClicked}
                   shortDescription={element.description}
                 ></DisplayCard>
               ))}
