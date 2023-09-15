@@ -313,4 +313,3 @@ if __name__ == '__main__':
     gbfs(graph, 'Рига', 'Уфа', ufa_dist, [])
     a_star('Рига', 'Уфа', graph, visited, best_cost)
     print("Самописный" + str(gbfs2(graph, "Рига", "Уфа")))
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
