@@ -1,0 +1,37 @@
+services:
+  postgres:
+    image: postgres:13
+    container_name: pg_test
+    environment:
+      POSTGRES_DB: app
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+  producer:
+    image: producer
+    container_name: producer
+    depends_on:
+      - postgres
+    command:
+      - java -jar /app/*.jar
+    ports:
+      - "24843:24843"
+  consumer:
+    image: consumer
+    container_name: consumer
+    depends_on:
+      - postgres
+    command:
+      - java -jar /app/*.jar
+    ports:
+      - "24844:24844"
+  camunda:
+    image: camunda
+    container_name: camunda
+    command:
+      - java -jar /app/*.jar
+    ports:
+      - "8080:8080"

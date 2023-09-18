@@ -1,0 +1,5 @@
+camunda:
+  bpm:
+    client:
+      base-url: http://localhost:8080/engine-rest
+      lock-duration: 10000

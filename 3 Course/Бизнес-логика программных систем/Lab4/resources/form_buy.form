@@ -1,0 +1,77 @@
+{
+  "components": [
+    {
+      "label": "Твой ID",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1o3s6nk",
+        "columns": null
+      },
+      "id": "Field_0dgyxpg",
+      "key": "user_id",
+      "defaultValue": "3"
+    },
+    {
+      "label": "Адрес доставки",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0x6sf5n",
+        "columns": null
+      },
+      "id": "Field_0ivcs9m",
+      "key": "address",
+      "defaultValue": "Университет ИТМО"
+    },
+    {
+      "label": "Пицца четыре сыра -- 359 руб.",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_1wmgta2",
+        "columns": null
+      },
+      "id": "Field_1rsfsqm",
+      "key": "pizza",
+      "defaultValue": false
+    },
+    {
+      "label": "Сок добрый -- 70 руб.",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_0uufbjq",
+        "columns": null
+      },
+      "id": "Field_0eqgrwk",
+      "key": "juice"
+    },
+    {
+      "label": "Суши-роллы -- 900 руб.",
+      "type": "checkbox",
+      "layout": {
+        "row": "Row_1a531sa",
+        "columns": null
+      },
+      "id": "Field_1ex8q6p",
+      "key": "sushi"
+    },
+    {
+      "action": "submit",
+      "label": "Погнали",
+      "type": "button",
+      "layout": {
+        "row": "Row_0c8r4h8",
+        "columns": null
+      },
+      "id": "Field_0cheto6",
+      "key": "field_1jc1wny"
+    }
+  ],
+  "type": "default",
+  "id": "Form_Buy",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.12.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.18.0",
+  "schemaVersion": 9
+}

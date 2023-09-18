@@ -1,0 +1,34 @@
+{
+  "components": [
+    {
+      "label": "SMS-code",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_14yg54r",
+        "columns": null
+      },
+      "id": "Field_1w2qvw5",
+      "key": "sms"
+    },
+    {
+      "action": "submit",
+      "label": "Send",
+      "type": "button",
+      "layout": {
+        "row": "Row_1qb076n",
+        "columns": null
+      },
+      "id": "Field_0y4movz",
+      "key": "field_1new96a"
+    }
+  ],
+  "type": "default",
+  "id": "Form_Sms",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.12.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.18.0",
+  "schemaVersion": 9
+}

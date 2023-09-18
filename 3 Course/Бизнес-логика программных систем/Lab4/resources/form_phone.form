@@ -1,0 +1,35 @@
+{
+  "components": [
+    {
+      "label": "Phone",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_11uzyor",
+        "columns": null
+      },
+      "id": "Field_1ti0nz9",
+      "key": "phone",
+      "defaultValue": "+79876543210"
+    },
+    {
+      "action": "submit",
+      "label": "Send",
+      "type": "button",
+      "layout": {
+        "row": "Row_0xotqw8",
+        "columns": null
+      },
+      "id": "Field_0gepgb0",
+      "key": "field_127cc57"
+    }
+  ],
+  "type": "default",
+  "id": "Form_Phone",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.12.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.18.0",
+  "schemaVersion": 9
+}

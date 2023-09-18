@@ -1,0 +1,54 @@
+{
+  "components": [
+    {
+      "label": "Card number",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_00noeoh",
+        "columns": null
+      },
+      "id": "Field_0yjg6uh",
+      "key": "card_number"
+    },
+    {
+      "label": "Card date",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_06h8p0l",
+        "columns": null
+      },
+      "id": "Field_1euc8vy",
+      "key": "card_date"
+    },
+    {
+      "label": "Card CVV",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0kj8qci",
+        "columns": null
+      },
+      "id": "Field_10spuzt",
+      "key": "card_cvv"
+    },
+    {
+      "action": "submit",
+      "label": "Send",
+      "type": "button",
+      "layout": {
+        "row": "Row_0d66ja1",
+        "columns": null
+      },
+      "id": "Field_0b581bi",
+      "key": "field_02nmrwc"
+    }
+  ],
+  "type": "default",
+  "id": "Form_Card",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.12.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.18.0",
+  "schemaVersion": 9
+}

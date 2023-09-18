@@ -1,0 +1,34 @@
+{
+  "components": [
+    {
+      "label": "Введите ID человека, номер которого удалить",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1z031x5",
+        "columns": null
+      },
+      "id": "Field_1dggdnr",
+      "key": "id"
+    },
+    {
+      "action": "submit",
+      "label": "Submit",
+      "type": "button",
+      "layout": {
+        "row": "Row_112n81j",
+        "columns": null
+      },
+      "id": "Field_1c9gvzu",
+      "key": "field_1gvf4s6"
+    }
+  ],
+  "type": "default",
+  "id": "Form_Delete_User",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.12.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.19.0",
+  "schemaVersion": 9
+}
