@@ -10,10 +10,10 @@ while 1:
     if mode == '1':
         print("Фраза для шифрования:")
         phrase = input().upper()
-        encode(keyword, phrase, print_steps=True)
+        encode(keyword, phrase, print_steps=True, print_table=True)
     elif mode == '2':
         print("Фраза для дешифрования:")
         phrase = input().upper()
-        decode(keyword, phrase)
+        decode(keyword, phrase, print_steps=True, print_table=True)
     else:
         print("Неверный ввод. Отмена операции.")
