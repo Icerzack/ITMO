@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2022 STMicroelectronics.
+  * Copyright (c) 2023 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -18,7 +18,6 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -32,6 +31,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -42,23 +42,23 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
 uint16_t GREEN_LIGHT = GPIO_PIN_13;
 uint16_t YELLOW_LIGHT = GPIO_PIN_14;
 uint16_t RED_LIGHT = GPIO_PIN_15;
 
 uint16_t BUTTON = GPIO_PIN_15;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
 void wait(uint32_t duration)
 {
 	uint32_t begin = HAL_GetTick();
@@ -67,7 +67,7 @@ void wait(uint32_t duration)
 
 void turnSpecificLightOff(uint16_t light_type)
 {
-	HAL_GPIO_WritePin(GPIOD, light_type, 0);
+	HAL_GPIO_WritePin(GPIOD, light_type, GPIO_PIN_RESET);
 }
 
 void shutdownAll()
@@ -75,12 +75,11 @@ void shutdownAll()
 	turnSpecificLightOff(GREEN_LIGHT);
 	turnSpecificLightOff(YELLOW_LIGHT);
 	turnSpecificLightOff(RED_LIGHT);
-
 }
 
 void turnSpecificLightOn(uint16_t light_type)
 {
-	HAL_GPIO_WritePin(GPIOD, light_type, 1);
+	HAL_GPIO_WritePin(GPIOD, light_type, GPIO_PIN_SET);
 }
 
 void blinkLight(uint32_t count, uint16_t light_type, uint32_t duration)
@@ -93,7 +92,6 @@ void blinkLight(uint32_t count, uint16_t light_type, uint32_t duration)
 		turnSpecificLightOff(light_type);
 	}
 }
-
 /* USER CODE END 0 */
 
 /**
@@ -127,7 +125,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   uint32_t startTime = 0;
-  uint32_t greenLightDuration = 10000;
+  uint32_t greenLightDuration = 2000;
   uint32_t blinkDuration = 500;
   uint32_t redLightDuration = 4 * greenLightDuration;
   uint32_t yellowLightDuration = 3000;
@@ -158,12 +156,13 @@ int main(void)
 
 	  blinkLight(3, GREEN_LIGHT, blinkDuration);
 
-	  redLightDuration = 4 * greenLightDuration;
-	  buttonFlag = 0;
-
 	  turnSpecificLightOn(YELLOW_LIGHT);
 
 	  startTime = HAL_GetTick();
+
+	  redLightDuration = 4 * greenLightDuration;
+	  buttonFlag = 0;
+
 	  while((HAL_GetTick() - startTime) < yellowLightDuration)
 	  {
 		  if(HAL_GPIO_ReadPin(GPIOC, BUTTON) == 0 && buttonFlag == 0) {
@@ -171,6 +170,8 @@ int main(void)
 			  buttonFlag = 1;
 		  }
 	  }
+
+	  turnSpecificLightOff(YELLOW_LIGHT);
 
     /* USER CODE END WHILE */
 
@@ -218,6 +219,43 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+}
+
+/**
+  * @brief GPIO Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_GPIO_Init(void)
+{
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+/* USER CODE BEGIN MX_GPIO_Init_1 */
+/* USER CODE END MX_GPIO_Init_1 */
+
+  /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOD_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOB_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin : PC15 */
+  GPIO_InitStruct.Pin = GPIO_PIN_15;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : PD13 PD14 PD15 */
+  GPIO_InitStruct.Pin = GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+/* USER CODE BEGIN MX_GPIO_Init_2 */
+/* USER CODE END MX_GPIO_Init_2 */
 }
 
 /* USER CODE BEGIN 4 */

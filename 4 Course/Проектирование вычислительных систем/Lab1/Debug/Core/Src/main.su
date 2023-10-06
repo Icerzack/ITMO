@@ -1,8 +1,9 @@
 ../Core/Src/main.c:62:6:wait	24	static
 ../Core/Src/main.c:68:6:turnSpecificLightOff	16	static
 ../Core/Src/main.c:73:6:shutdownAll	8	static
-../Core/Src/main.c:81:6:turnSpecificLightOn	16	static
-../Core/Src/main.c:86:6:blinkLight	32	static
-../Core/Src/main.c:103:5:main	32	static
-../Core/Src/main.c:186:6:SystemClock_Config	88	static
-../Core/Src/main.c:231:6:Error_Handler	4	static,ignoring_inline_asm
+../Core/Src/main.c:80:6:turnSpecificLightOn	16	static
+../Core/Src/main.c:85:6:blinkLight	32	static
+../Core/Src/main.c:101:5:main	32	static
+../Core/Src/main.c:187:6:SystemClock_Config	88	static
+../Core/Src/main.c:229:13:MX_GPIO_Init	48	static
+../Core/Src/main.c:269:6:Error_Handler	4	static,ignoring_inline_asm
