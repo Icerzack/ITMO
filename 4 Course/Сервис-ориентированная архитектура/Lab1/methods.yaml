@@ -1,0 +1,120 @@
+openapi: 3.0.3
+info:
+  title: Сервис-ориентированная архитектура. Лабораторная работа №1 
+  description: Second web service
+  version: 1.0.0
+servers:
+  - url: 'http://localhost:8089/api/v1'
+paths:
+  /route/{id-from}/{id-to}/shortest:
+    get:
+      summary: Нахождение самого короткого маршрута между указанными локациями
+      description: Нахождение самого короткого маршрута между указанными локациями
+      operationId: findShortestPath
+      parameters:
+        - name: id-from
+          in: path
+          required: true
+          description: Location id from
+          schema:
+            type: integer
+            format: int64
+            nullable: false
+            minimum: 0
+            exclusiveMinimum: true
+            example: 1
+        - name: id-to
+          in: path
+          required: true
+          description: Location id to
+          schema:
+            type: integer
+            format: int64
+            nullable: false
+            minimum: 0
+            exclusiveMinimum: true
+            example: 2
+      tags:
+        - Route
+      responses:
+        '200':
+          description: Returns the distance of the shortest path
+          content:
+            application/json:
+              schema:
+                type: number
+                format: float
+                example: 1200
+        '400':
+          description: Invalid query param
+          content:
+            application/json:
+              schema:
+                $ref: './routes.yaml#/components/schemas/ErrorIQP'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: './routes.yaml#/components/schemas/ErrorISE'
+        '404':
+          description: Returned for other errors
+          content:
+            application/json:
+              schema:
+                $ref: './routes.yaml#/components/schemas/ErrorDefault'
+  /route/add/{id-from}/{id-to}:
+    post:
+      summary: Добавление нового маршрута между указанными локациями
+      description: Добавление нового маршрута между указанными локациями
+      operationId: addNewRoute
+      parameters:
+        - name: id-from
+          in: path
+          required: true
+          description: Location id from
+          schema:
+            type: integer
+            format: int64
+            nullable: false
+            minimum: 0
+            exclusiveMinimum: true
+            example: 1
+        - name: id-to
+          in: path
+          required: true
+          description: Location id to
+          schema:
+            type: integer
+            format: int64
+            nullable: false
+            minimum: 0
+            exclusiveMinimum: true
+            example: 2
+      tags:
+        - Route
+      responses:
+        '200':
+          description: Returns new Route
+          content:
+            application/json:
+              schema:
+                $ref: './routes.yaml#/components/schemas/RouteAllFieldsSchema'
+        '400':
+            description: Invalid query param
+            content:
+              application/json:
+                schema:
+                  $ref: './routes.yaml#/components/schemas/ErrorIQP'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: './routes.yaml#/components/schemas/ErrorISE'
+        '404':
+          description: Returned for other errors
+          content:
+            application/json:
+              schema:
+                $ref: './routes.yaml#/components/schemas/ErrorDefault'
