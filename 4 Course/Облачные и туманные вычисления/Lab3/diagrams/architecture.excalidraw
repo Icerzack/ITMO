@@ -2124,11 +2124,11 @@
         "type": 2
       },
       "seed": 44262892,
-      "version": 349,
-      "versionNonce": 1671774036,
+      "version": 350,
+      "versionNonce": 1644739028,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1699811960912,
+      "updated": 1699817629207,
       "link": null,
       "locked": false,
       "points": [
@@ -2156,7 +2156,7 @@
         "focus": 0.4402172513765944,
         "gap": 18.873406478019348
       },
-      "startArrowhead": "triangle",
+      "startArrowhead": null,
       "endArrowhead": "triangle"
     }
   ],
