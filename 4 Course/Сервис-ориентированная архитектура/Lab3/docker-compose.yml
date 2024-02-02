@@ -1,0 +1,99 @@
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./routes/src/main/resources/sql/create.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+    container_name: route-db
+  service1-1:
+    build:
+      context: routes
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    environment:
+      - DATABASE_HOST=postgres
+      - DATABASE_PORT=5432
+      - DATABASE_USERNAME=postgres
+      - DATABASE_PASSWORD=postgres
+      - CONSUL_HOST=consul
+      - CONSUL_PORT=8500
+      - SERVER_PORT=8089
+    ports:
+      - "8089:8089"
+    container_name: routes-1
+
+  service1-2:
+    build:
+      context: routes
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    environment:
+      - DATABASE_HOST=postgres
+      - DATABASE_PORT=5432
+      - DATABASE_USERNAME=postgres
+      - DATABASE_PASSWORD=postgres
+      - CONSUL_HOST=consul
+      - CONSUL_PORT=8500
+      - SERVER_PORT=8090
+    ports:
+      - "8090:8090"
+    container_name: routes-2
+
+  service2-1:
+    platform: linux/arm64
+    build:
+      context: navigator
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+      - service1-1
+    ports:
+      - "8081:8081"
+    container_name: navigator-1
+
+  service2-2:
+    platform: linux/arm64
+    build:
+      context: navigator
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+      - service1-2
+    ports:
+      - "8082:8081"
+    container_name: navigator-2
+
+  consul:
+    container_name: consul
+    image: consul:1.7.3
+    restart: unless-stopped
+    ports:
+      - "8500:8500"
+      - "8600:8600/udp"
+    command: consul agent -dev -config-dir /etc/consul.d
+    volumes:
+      - ./consul.server.json:/etc/consul.d/consul.server.json
+
+  haproxy:
+    image: haproxy:2.6.16
+    container_name: haproxy
+    restart: always
+    ports:
+      - "2222:2222"
+      - "1111:1111"
+      - "8084:8084"
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+      - ./certs/haproxy.pem:/haproxy.pem
+
+networks:
+  default:
+    name: consul_haproxy.network
+    driver: bridge

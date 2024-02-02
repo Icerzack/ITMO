@@ -1,0 +1,12 @@
+{
+  "datacenter": "primary-dc",
+  "bind_addr": "0.0.0.0",
+  "client_addr": "0.0.0.0",
+  "bootstrap": true,
+  "disable_update_check": true,
+  "ui": true,
+  "dns_config": {
+    "enable_truncate": true,
+    "udp_answer_limit": 100
+  }
+}
