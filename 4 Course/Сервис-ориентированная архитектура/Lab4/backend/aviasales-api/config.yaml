@@ -1,0 +1,14 @@
+server:
+  port: 8090
+api:
+  base_uri: https://api.travelpayouts.com/aviasales/v3/
+  endpoints:
+    special_offers: get_special_offers
+storage:
+  redis:
+    addr: "localhost:6379"
+    password:
+    db: 0
+    timeout: 5s
+prometheus:
+  port: 9090

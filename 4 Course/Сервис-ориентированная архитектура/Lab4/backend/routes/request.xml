@@ -1,0 +1,12 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="http://soap">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:getRoutesRequest>
+            <gs:sort></gs:sort>
+            <gs:filter></gs:filter>
+            <gs:page>2</gs:page>
+            <gs:elementsCount>5</gs:elementsCount>
+        </gs:getRoutesRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,8 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://soap">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <soap:getRouteRequest>
+            <soap:id>15</soap:id>
+        </soap:getRouteRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

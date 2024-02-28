@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mule xmlns:tls="http://www.mulesoft.org/schema/mule/tls"
+	  xmlns:wsc="http://www.mulesoft.org/schema/mule/wsc"
+	  xmlns="http://www.mulesoft.org/schema/mule/core"
+	  xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit"
+	  xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	  xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	  xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/wsc http://www.mulesoft.org/schema/mule/wsc/current/mule-wsc.xsd
+http://www.mulesoft.org/schema/mule/tls http://www.mulesoft.org/schema/mule/tls/current/mule-tls.xsd">
+	<http:listener-config
+			name="soa4-httpListenerConfig" doc:name="soa4-httpListenerConfig">
+		<http:listener-connection host="0.0.0.0"
+								  port="8081" protocol="HTTPS">
+			<tls:context >
+				<tls:key-store type="pkcs12" path="keystore.p12" alias="mycertificate" keyPassword="password" password="password" />
+			</tls:context>
+		</http:listener-connection>
+	</http:listener-config>
+	<apikit:config name="soa4-config" api="soa4.raml"
+				   outboundHeadersMapName="outboundHeaders"
+				   httpStatusVarName="httpStatus" />
+	<wsc:config name="Web_Service_Consumer_Config_Put_Route"
+				doc:name="Web Service Consumer Config"
+				doc:id="882ce12d-43b5-410e-b3e1-e4b7c6e9366c">
+		<wsc:connection
+				wsdlLocation="/Users/maxkuznetsov/Desktop/GitHub Desktop Folders/soa4/backend/routes/routes.wsdl"
+				service="RoutesPortService" port="RoutesPortSoap11"
+				address="https://localhost:8088/ws" >
+			<wsc:custom-transport-configuration >
+				<wsc:http-transport-configuration requesterConfig="HTTP_Request_configuration" />
+			</wsc:custom-transport-configuration>
+			<wsc:web-service-security actor="http://schemas.xmlsoap.org/soap/actor/next" />
+		</wsc:connection>
+	</wsc:config>
+	<wsc:config
+			name="Web_Service_Consumer_Config_Delete_Route_Distance"
+			doc:name="Web Service Consumer Config"
+			doc:id="4ff7b977-b38e-4f56-80bc-fd90fdd0a52a">
+		<wsc:connection
+				wsdlLocation="/Users/maxkuznetsov/Desktop/GitHub Desktop Folders/soa4/backend/routes/routes.wsdl"
+				service="RoutesPortService" port="RoutesPortSoap11"
+				address="https://localhost:8088/ws" >
+			<wsc:custom-transport-configuration >
+				<wsc:http-transport-configuration requesterConfig="HTTP_Request_configuration" />
+			</wsc:custom-transport-configuration>
+		</wsc:connection>
+	</wsc:config>
+	<wsc:config name="Web_Service_Consumer_Config_Delete_Route"
+				doc:name="Web Service Consumer Config"
+				doc:id="8bdd9b24-92bd-499d-a7be-ec88df5c9d4f">
+		<wsc:connection
+				wsdlLocation="/Users/maxkuznetsov/Desktop/GitHub Desktop Folders/soa4/backend/routes/routes.wsdl"
+				service="RoutesPortService" port="RoutesPortSoap11"
+				address="https://localhost:8088/ws" >
+			<wsc:custom-transport-configuration >
+				<wsc:http-transport-configuration requesterConfig="HTTP_Request_configuration" />
+			</wsc:custom-transport-configuration>
+		</wsc:connection>
+	</wsc:config>
+	<wsc:config
+			name="Web_Service_Consumer_Config_Routes_Count_Greater"
+			doc:name="Web Service Consumer Config"
+			doc:id="6b779acd-fd9c-4793-85ec-3021fdc9c351">
+		<wsc:connection
+				wsdlLocation="/Users/maxkuznetsov/Desktop/GitHub Desktop Folders/soa4/backend/routes/routes.wsdl"
+				service="RoutesPortService" port="RoutesPortSoap11"
+				address="https://localhost:8088/ws" >
+			<wsc:custom-transport-configuration >
+				<wsc:http-transport-configuration requesterConfig="HTTP_Request_configuration" />
+			</wsc:custom-transport-configuration>
+		</wsc:connection>
+	</wsc:config>
+	<wsc:config name="Web_Service_Consumer_Config_Get_Routes"
+				doc:name="Web Service Consumer Config"
+				doc:id="c62ce2b7-1e70-415d-a19b-179fecd2461f">
+		<wsc:connection
+				wsdlLocation="/Users/maxkuznetsov/Desktop/GitHub Desktop Folders/soa4/backend/routes/routes.wsdl"
+				service="RoutesPortService" port="RoutesPortSoap11"
+				address="https://localhost:8088/ws" >
+			<wsc:custom-transport-configuration >
+				<wsc:http-transport-configuration requesterConfig="HTTP_Request_configuration" />
+			</wsc:custom-transport-configuration>
+		</wsc:connection>
+	</wsc:config>
+	<wsc:config name="Web_Service_Consumer_Config_Distances_Sum"
+				doc:name="Web Service Consumer Config"
+				doc:id="76ececc4-d51f-457b-b068-e9c1f22b0fda">
+		<wsc:connection
+				wsdlLocation="/Users/maxkuznetsov/Desktop/GitHub Desktop Folders/soa4/backend/routes/routes.wsdl"
+				service="RoutesPortService" port="RoutesPortSoap11"
+				address="https://localhost:8088/ws" >
+			<wsc:custom-transport-configuration >
+				<wsc:http-transport-configuration requesterConfig="HTTP_Request_configuration" />
+			</wsc:custom-transport-configuration>
+		</wsc:connection>
+	</wsc:config>
+	<wsc:config name="Web_Service_Consumer_Config_Get_Route"
+				doc:name="Web Service Consumer Config"
+				doc:id="f29906cd-9b18-4052-a0e4-ba6c116cfae9">
+		<wsc:connection
+				wsdlLocation="/Users/maxkuznetsov/Desktop/GitHub Desktop Folders/soa4/backend/routes/routes.wsdl"
+				service="RoutesPortService" port="RoutesPortSoap11"
+				address="https://localhost:8088/ws" >
+			<wsc:custom-transport-configuration >
+				<wsc:http-transport-configuration requesterConfig="HTTP_Request_configuration" />
+			</wsc:custom-transport-configuration>
+		</wsc:connection>
+	</wsc:config>
+	<wsc:config name="Web_Service_Consumer_Config_Post_Route"
+				doc:name="Web Service Consumer Config"
+				doc:id="a86f04e1-c918-469e-8292-1afba7dbf6eb">
+		<wsc:connection
+				wsdlLocation="/Users/maxkuznetsov/Desktop/GitHub Desktop Folders/soa4/backend/routes/routes.wsdl"
+				service="RoutesPortService" port="RoutesPortSoap11"
+				address="https://localhost:8088/ws" >
+			<wsc:custom-transport-configuration >
+				<wsc:http-transport-configuration requesterConfig="HTTP_Request_configuration" />
+			</wsc:custom-transport-configuration>
+		</wsc:connection>
+	</wsc:config>
+	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="0bad8fe8-ed33-4e26-960b-fe50d7047c2a" basePath="/ws" requestStreamingMode="NEVER">
+		<http:request-connection protocol="HTTPS">
+			<tls:context >
+				<tls:trust-store insecure="true" path="trust_store.p12" password="password" type="pkcs12"/>
+				<tls:key-store type="pkcs12" path="keystore.p12" alias="mycertificate" keyPassword="password" password="password" />
+			</tls:context>
+		</http:request-connection>
+		<http:response-validator>
+			<http:success-status-code-validator values="100..500"/>
+		</http:response-validator>
+	</http:request-config>
+	<flow name="soa4-main">
+		<http:listener config-ref="soa4-httpListenerConfig"
+					   path="/api/*">
+			<http:response
+					statusCode="#[vars.httpStatus default 200]">
+				<http:headers><![CDATA[#[output application/java
+---
+{
+	"Access-Control-Allow-Origin" : "*",
+	"Access-Control-Allow-Methods" : "GET, PUT, POST, DELETE, HEAD, OPTIONS",
+	"Access-Control-Allow-Headers" : "*",
+	"Access-Control-Allow-Credentials" : "true"
+}]]]></http:headers>
+			</http:response>
+			<http:error-response
+					statusCode='#[read(error.exception.cause.detail, "application/xml").detail.code default 500]'>
+				<http:body><![CDATA[#[payload]]]></http:body>
+				<http:headers><![CDATA[#[output application/java
+---
+{
+	"Access-Control-Allow-Origin" : "*",
+	"Access-Control-Allow-Methods" : "GET, PUT, POST, DELETE, HEAD, OPTIONS",
+	"Access-Control-Allow-Headers" : "*",
+	"Access-Control-Allow-Credentials" : "true"
+}]]]></http:headers>
+			</http:error-response>
+		</http:listener>
+		<apikit:router config-ref="soa4-config" />
+	</flow>
+	<flow name="soa4-console">
+		<http:listener config-ref="soa4-httpListenerConfig" path="/console/*">
+			<http:response statusCode="#[vars.httpStatus default 200]">
+				<http:headers>#[vars.outboundHeaders default {}]</http:headers>
+			</http:response>
+			<http:error-response statusCode="#[vars.httpStatus default 500]">
+				<http:body>#[payload]</http:body>
+				<http:headers>#[vars.outboundHeaders default {}]</http:headers>
+			</http:error-response>
+		</http:listener>
+		<apikit:console config-ref="soa4-config" />
+	</flow>
+	<flow name="put:\routes\(id):application\json:soa4-config">
+		<logger level="INFO" doc:name="Logger" doc:id="97ac341f-46c8-44cf-b8ee-9b947244fb27" message="put:\routes\(id):application\json:soa4-config" />
+		<ee:transform doc:name="Transform Message" doc:id="a3b957c7-dd52-4daa-819a-f61b6f08cabe" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml skipNullOn = "everywhere"
+ns ns0 http://soap
+---
+{
+	ns0#putRouteRequest: {
+		ns0#id: attributes.uriParams.id,
+		ns0#route: {
+			ns0#name: payload.name,
+			ns0#distance: payload.distance,
+			ns0#from: {
+				ns0#coordinates: {
+					ns0#x: payload.from.coordinates.x,
+					ns0#y: payload.from.coordinates.y
+				},
+				ns0#name: payload.from.name
+			},
+			ns0#to: {
+				ns0#coordinates: {
+					ns0#x: payload.to.coordinates.x,
+					ns0#y: payload.to.coordinates.y
+				},
+				ns0#name: payload.to.name
+			},
+
+		}
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<wsc:consume doc:name="Consume" doc:id="6cfca6c4-19aa-4dfe-ba91-b72199bf4d20" config-ref="Web_Service_Consumer_Config_Put_Route" operation="putRoute"/>
+		<ee:transform doc:name="Transform Message" doc:id="b7bb5b91-89cb-4b27-b616-b09dcd136381">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
+ns ns0 http://soap
+
+output application/json
+---
+payload.body.ns0#putRouteResponse.ns0#route]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<error-handler>
+			<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="3b22dfc4-91d4-46ac-b7f2-75d84e6e0fc9" type="ANY" >
+				<set-variable value="#[error.exception.cause.detail]" doc:name="Set Variable" doc:id="1478fa82-2b8b-4287-8ab8-aaaa6e9babd9" variableName="detail" mimeType="application/xml"/>
+				<ee:transform doc:name="Transform Message" doc:id="7fe0dee2-d8c4-49b6-8135-f4a128c87ccd" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"code": vars.detail.detail.code,
+	"message": vars.detail.detail.message,
+	"time": vars.detail.detail.time,
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+				<logger level="INFO" doc:name="Logger" doc:id="ffb4b2a7-3da4-4518-921c-e25990141e96" />
+			</on-error-propagate>
+		</error-handler>
+	</flow>
+	<flow name="delete:\routes\distances\(distance):soa4-config">
+		<logger level="INFO" doc:name="Logger" doc:id="6fa92973-e71d-4175-856a-cba642b8cad8" />
+		<ee:transform doc:name="Transform Message" doc:id="5283e5f6-0fa3-4a9a-b596-f827f6b24641" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml skipNullOn = "everywhere"
+ns ns0 http://soap
+---
+{
+	ns0#deleteDistancesRequest: {
+		ns0#distance: attributes.uriParams.distance,
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<wsc:consume doc:name="Consume" doc:id="714c7860-6c5d-4a0d-bba7-52ac28780bc4" config-ref="Web_Service_Consumer_Config_Delete_Route_Distance" operation="deleteDistances"/>
+		<ee:transform doc:name="Transform Message" doc:id="d0602779-29af-4333-bbe5-3cf3f85cf0f9">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
+ns ns0 http://soap
+
+output application/json
+---
+payload.body.ns0#deleteDistancesResponse default {}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<error-handler>
+			<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="b594f960-5aec-431e-a48c-4573e1c307c6" type="ANY" >
+				<set-variable value="#[error.exception.cause.detail]" doc:name="Set Variable" doc:id="ec9d49d3-61b6-462d-a2c3-6e258d147164" variableName="detail" mimeType="application/xml"/>
+				<ee:transform doc:name="Transform Message" doc:id="0cb7f6b7-fcba-4e88-a8a4-114200ce377e" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"code": vars.detail.detail.code,
+	"message": vars.detail.detail.message,
+	"time": vars.detail.detail.time,
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+				<logger level="INFO" doc:name="Logger" doc:id="4065ee24-8ca6-498d-afa5-ca3d47cf02a0" />
+			</on-error-propagate>
+		</error-handler>
+	</flow>
+	<flow name="delete:\routes\(id):soa4-config">
+		<logger level="INFO" message="delete:\routes\(id):soa4-config" />
+		<ee:transform doc:name="Transform Message" doc:id="29b6ff96-2d11-4d53-ad94-77f6796b1e2f" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml skipNullOn = "everywhere"
+ns ns0 http://soap
+---
+{
+	ns0#deleteRouteRequest: {
+		ns0#id: attributes.uriParams.id,
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<wsc:consume doc:name="Consume" doc:id="edafe6b0-f4f6-4f86-9387-f5451bef605a" config-ref="Web_Service_Consumer_Config_Delete_Route" operation="deleteRoute"/>
+		<ee:transform doc:name="Transform Message" doc:id="53716ce0-c826-4a52-a5b5-0158cec6d9da">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
+ns ns0 http://soap
+
+output application/json
+---
+payload.body.ns0#deleteRouteResponse default {}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<error-handler>
+			<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="7345952c-1070-467c-827a-e569d970f1a1" type="ANY" >
+				<set-variable value="#[error.exception.cause.detail]" doc:name="Set Variable" doc:id="41a9d89e-a4b2-4499-8e8a-e31791d308e3" variableName="detail" mimeType="application/xml"/>
+				<ee:transform doc:name="Transform Message" doc:id="f73bc34d-8291-4e14-b61a-1d1a829322dd" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"code": vars.detail.detail.code,
+	"message": vars.detail.detail.message,
+	"time": vars.detail.detail.time,
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+				<logger level="INFO" doc:name="Logger" doc:id="61093a64-6149-44d1-a0f7-712fd28df19a" />
+			</on-error-propagate>
+		</error-handler>
+	</flow>
+	<flow name="options:\routes\distances\(distance)\count\greater:soa4-config">
+		<logger level="INFO" message="options:\routes\distances\(distance)\count\greater:soa4-config" />
+	</flow>
+	<flow name="options:\routes:soa4-config">
+		<logger level="INFO" message="options:\routes:soa4-config" />
+	</flow>
+	<flow name="options:\routes\distances\sum:soa4-config">
+		<logger level="INFO" message="options:\routes\distances\sum:soa4-config" />
+	</flow>
+	<flow name="options:\routes\distances\(distance):soa4-config">
+		<logger level="INFO" message="options:\routes\distances\(distance):soa4-config" />
+	</flow>
+	<flow name="options:\routes\(id):soa4-config">
+		<logger level="INFO" message="options:\routes\(id):soa4-config" />
+	</flow>
+	<flow name="get:\routes\distances\(distance)\count\greater:soa4-config">
+		<logger level="INFO" doc:name="Logger" doc:id="81f4cf72-2c2b-4cf7-88de-c77f4696ef2f" />
+		<ee:transform doc:name="Transform Message1" doc:id="5a32eecd-4ff8-416d-8080-feb41b4fd6a2">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
+output application/xml skipNullOn = "everywhere"
+ns ns0 http://soap
+---
+{
+	ns0#getRoutesWithGreaterDistanceRequest: {
+		ns0#distance: attributes.uriParams.distance,
+	}
+}]]></ee:set-payload>
+			</ee:message>
+			<ee:variables />
+		</ee:transform>
+		<wsc:consume doc:name="Consume" doc:id="18393881-d45b-47c0-b4ec-5503fd13027f" config-ref="Web_Service_Consumer_Config_Routes_Count_Greater" operation="getRoutesWithGreaterDistance"/>
+		<ee:transform doc:name="Transform Message" doc:id="bd33bb5c-6db5-43eb-a0ab-3d8b05bf4342">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
+ns ns0 http://soap
+
+output application/json
+---
+payload.body.ns0#getRoutesWithGreaterDistanceResponse.ns0#count]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<error-handler>
+			<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="fe5e1e36-9aa7-4810-a71a-1b628bbb2df6" type="ANY" >
+				<set-variable value="#[error.exception.cause.detail]" doc:name="Set Variable" doc:id="448bda81-2608-403c-b17e-ce61f5841888" variableName="detail" mimeType="application/xml"/>
+				<ee:transform doc:name="Transform Message" doc:id="d6e9f7c8-6334-49f7-8fdd-b623eed8d969" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"code": vars.detail.detail.code,
+	"message": vars.detail.detail.message,
+	"time": vars.detail.detail.time,
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+				<logger level="INFO" doc:name="Logger" doc:id="399b795d-8507-4341-bfb8-b86851b60dd6" />
+			</on-error-propagate>
+		</error-handler>
+	</flow>
+	<flow name="get:\routes:soa4-config">
+		<logger level="INFO" message="get:\routes:soa4-config" />
+		<ee:transform doc:name="Transform Message" doc:id="6642a54c-163a-466c-b4f6-4d1e13d6badf" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output text/xml skipNullOn="everywhere"
+ns ns0 http://soap
+---
+{
+	ns0#getRoutesRequest: {
+		ns0#sort: attributes.queryParams.sort,
+		ns0#filter: attributes.queryParams.filter,
+		ns0#page: attributes.queryParams.page,
+		ns0#elementsCount: attributes.queryParams.elementsCount
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<wsc:consume doc:name="Consume" doc:id="6ea0f351-5d55-45b4-a907-b8398c81955a" config-ref="Web_Service_Consumer_Config_Get_Routes" operation="getRoutes"/>
+		<ee:transform doc:name="Transform Message" doc:id="f6e329c3-1699-4863-8f0a-89bb11da5ace">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
+ns ns0 http://soap
+
+output application/json duplicateKeyAsArray=true
+---
+{
+	"routes": payload.body.ns0#getRoutesResponse.*ns0#routes map (item, index) -> item,
+	"page": payload.body.ns0#getRoutesResponse.ns0#page,
+	"elementsCount": payload.body.ns0#getRoutesResponse.ns0#elementsCount,
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<error-handler>
+			<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="982f7a17-1995-440f-88af-a0b67ae21b2e" type="ANY" >
+				<set-variable value="#[error.exception.cause.detail]" doc:name="Set Variable" doc:id="ec3d9be0-d205-4ce3-b408-056d2908d334" variableName="detail" mimeType="application/xml"/>
+				<ee:transform doc:name="Transform Message" doc:id="1b36f269-36bc-4534-8418-ee40b8296229" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"code": vars.detail.detail.code,
+	"message": vars.detail.detail.message,
+	"time": vars.detail.detail.time,
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+				<logger level="INFO" doc:name="Logger" doc:id="fc0e5260-df75-496f-92ac-3da7fe3c26ee" />
+			</on-error-propagate>
+		</error-handler>
+	</flow>
+	<flow name="get:\routes\(id):soa4-config">
+		<logger level="INFO" message="get:\routes\(id):soa4-config" />
+		<ee:transform doc:name="Transform Message1" doc:id="6418a86d-9a8e-4cb1-b4c3-1c0b81969b48">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
+output application/xml skipNullOn = "everywhere"
+ns ns0 http://soap
+---
+{
+	ns0#getRouteRequest: {
+		ns0#id: attributes.uriParams.id
+	}
+}]]></ee:set-payload>
+			</ee:message>
+			<ee:variables />
+		</ee:transform>
+		<wsc:consume doc:name="Consume" doc:id="0c4d1b59-831d-47e8-95c4-70a8e4ca8c59" config-ref="Web_Service_Consumer_Config_Get_Route" operation="getRoute"/>
+		<ee:transform doc:name="Transform Message" doc:id="24021545-bbee-4e7b-b92f-3163831691f4">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
+ns ns0 http://soap
+
+output application/json
+---
+payload.body.ns0#getRouteResponse.ns0#route]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<error-handler>
+			<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="8a8e6870-2f48-4cd0-b494-bbb68dbe49a2" type="ANY" >
+				<set-variable value="#[error.exception.cause.detail]" doc:name="Set Variable" doc:id="76a21fe8-90c4-408d-8e61-8f9b667839df" variableName="detail" mimeType="application/xml"/>
+				<ee:transform doc:name="Transform Message" doc:id="a0f59b9f-5709-4b8c-9972-87027e6ef4a1" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"code": vars.detail.detail.code,
+	"message": vars.detail.detail.message,
+	"time": vars.detail.detail.time,
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+				<logger level="INFO" doc:name="Logger" doc:id="a4d9eadc-5ce9-48aa-908f-daae066230b7" />
+			</on-error-propagate>
+		</error-handler>
+	</flow>
+	<flow name="post:\routes:application\json:soa4-config">
+		<logger level="INFO" message="post:\routes:application\json:soa4-config" />
+		<ee:transform doc:name="Transform Message" doc:id="df74578e-6503-4fc5-8ae2-f7b02f3fb8a4" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/xml skipNullOn = "everywhere"
+ns ns0 http://soap
+---
+{
+	ns0#postRouteRequest: {
+		ns0#route: {
+			ns0#name: payload.name,
+			ns0#distance: payload.distance,
+			ns0#from: {
+				ns0#coordinates: {
+					ns0#x: payload.from.coordinates.x,
+					ns0#y: payload.from.coordinates.y
+				},
+				ns0#name: payload.from.name
+			},
+			ns0#to: {
+				ns0#coordinates: {
+					ns0#x: payload.to.coordinates.x,
+					ns0#y: payload.to.coordinates.y
+				},
+				ns0#name: payload.to.name
+			},
+
+		}
+	}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<wsc:consume doc:name="Consume" doc:id="b3def00a-8981-4f6f-a9c8-6aebc8530036" config-ref="Web_Service_Consumer_Config_Post_Route" operation="postRoute"/>
+		<ee:transform doc:name="Transform Message" doc:id="f0d29b6f-8746-425f-adfc-ecf581882ab7">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
+ns ns0 http://soap
+
+output application/json
+---
+payload.body.ns0#postRouteResponse.ns0#route]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<error-handler>
+			<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="b83a1d5f-0537-46fe-a3b7-52b5c1699683" type="ANY" >
+				<set-variable value="#[error.exception.cause.detail]" doc:name="Set Variable" doc:id="a699f1fe-168e-49a9-b010-fbe5ffa1ac7b" variableName="detail" mimeType="application/xml"/>
+				<ee:transform doc:name="Transform Message" doc:id="97d82836-ea1a-4f69-8d28-9cff24a20d8f" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"code": vars.detail.detail.code,
+	"message": vars.detail.detail.message,
+	"time": vars.detail.detail.time,
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+				<logger level="INFO" doc:name="Logger" doc:id="16ffc419-cabc-4b2d-a7a2-2dbc9dd6a921" />
+			</on-error-propagate>
+		</error-handler>
+	</flow>
+	<flow name="get:\routes\distances\sum:soa4-config" doc:id="ad14c77e-cf7b-4652-86e6-290922e5a3cd" >
+		<logger level="INFO" doc:name="Logger" doc:id="2240f44f-f7aa-41cb-b53c-12edf0e513e0" />
+		<ee:transform doc:name="Transform Message" doc:id="a3aaf506-c6d2-4f0d-9944-51d20b6dac65">
+			<ee:message>
+				<ee:set-payload><![CDATA[%dw 2.0
+output application/xml skipNullOn = "everywhere"
+ns ns0 http://soap
+---
+
+{
+	ns0#getDistancesSumRequest: {}
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<wsc:consume operation="getDistancesSum" doc:name="Consume" doc:id="72e987a9-7bda-4e64-95ee-f6fc25267013" config-ref="Web_Service_Consumer_Config_Distances_Sum" />
+		<ee:transform doc:name="Transform Message1" doc:id="6d792141-52da-412a-aa58-57a8a7f2a3da" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+ns ns0 http://soap
+
+output application/json
+---
+payload.body.ns0#getDistancesSumResponse.ns0#distance]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<error-handler >
+			<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="0f3aee64-726c-40f4-b5ea-2dedc2cc7a57" type="ANY" >
+				<set-variable value="#[error.exception.cause.detail]" doc:name="Set Variable" doc:id="6c33ed86-3c50-4111-811b-057bd0824dcb" variableName="detail" mimeType="application/xml" />
+				<ee:transform doc:name="Transform Message" doc:id="fcce331c-3455-4cbd-a444-bd8a520742f9" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"code": vars.detail.detail.code,
+	"message": vars.detail.detail.message,
+	"time": vars.detail.detail.time,
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+				<logger level="INFO" doc:name="Logger" doc:id="d3d609b1-d141-4234-b211-b8b644a868a4" />
+			</on-error-propagate>
+		</error-handler>
+	</flow>
+</mule>

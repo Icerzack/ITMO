@@ -1,0 +1,333 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://soap" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soap" targetNamespace="http://soap">
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://soap">
+            <!--   Get /routes   -->
+            <xs:element name="getRoutesRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="sort" type="xs:string"/>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="filter" type="xs:string"/>
+                        <xs:element minOccurs="0" name="page" type="xs:int"/>
+                        <xs:element minOccurs="0" name="elementsCount" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getRoutesResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" name="routes" type="tns:RouteDTOSoap"/>
+                        <xs:element minOccurs="0" name="page" type="xs:int"/>
+                        <xs:element minOccurs="0" name="elementsCount" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <!--   Post /routes   -->
+            <xs:element name="postRouteRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" name="route" type="tns:RouteDTOSoapRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="postRouteResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" name="route" type="tns:RouteDTOSoap"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <!--   Get /routes/{id}   -->
+            <xs:element name="getRouteRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="1" name="id" type="xs:long"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getRouteResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" name="route" type="tns:RouteDTOSoap"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <!--   Put /routes/{id}   -->
+            <xs:element name="putRouteRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="1" name="id" type="xs:long"/>
+                        <xs:element maxOccurs="1" name="route" type="tns:RouteDTOSoapRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="putRouteResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="1" name="route" type="tns:RouteDTOSoap"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <!--   Delete /routes/{id}   -->
+            <xs:element name="deleteRouteRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="1" name="id" type="xs:long"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="deleteRouteResponse">
+                <xs:complexType>
+                    <xs:sequence> </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <!--   Delete /routes/distances/{distance}   -->
+            <xs:element name="deleteDistancesRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="1" name="distance" type="xs:float"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="deleteDistancesResponse">
+                <xs:complexType>
+                    <xs:sequence> </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <!--   Get /routes/distances/sum   -->
+            <xs:element name="getDistancesSumRequest">
+                <xs:complexType>
+                    <xs:sequence> </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getDistancesSumResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="1" name="distance" type="xs:float"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <!--   Get /routes/distances/{distance}/count/greater   -->
+            <xs:element name="getRoutesWithGreaterDistanceRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="1" name="distance" type="xs:float"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getRoutesWithGreaterDistanceResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="1" name="count" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <!--  Types   -->
+            <xs:complexType name="CoordinateDTOSoap">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="x" type="xs:int"/>
+                    <xs:element minOccurs="0" name="y" type="xs:float"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="LocationDTOSoap">
+                <xs:sequence>
+                    <xs:element minOccurs="1" name="id" type="xs:long"/>
+                    <xs:element name="coordinates" type="tns:CoordinateDTOSoap"/>
+                    <xs:element name="name" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="RouteDTOSoap">
+                <xs:sequence>
+                    <xs:element minOccurs="1" name="id" type="xs:long"/>
+                    <xs:element name="creationDate" type="xs:dateTime"/>
+                    <xs:element name="name" type="xs:string"/>
+                    <xs:element name="from" type="tns:LocationDTOSoap"/>
+                    <xs:element name="to" type="tns:LocationDTOSoap"/>
+                    <xs:element name="distance" type="xs:float"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="RouteDTOSoapRequest">
+                <xs:sequence>
+                    <xs:element name="name" type="xs:string"/>
+                    <xs:element name="from" type="tns:LocationDTOSoapRequest"/>
+                    <xs:element name="to" type="tns:LocationDTOSoapRequest"/>
+                    <xs:element name="distance" type="xs:float"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="LocationDTOSoapRequest">
+                <xs:sequence>
+                    <xs:element name="coordinates" type="tns:CoordinateDTOSoap"/>
+                    <xs:element name="name" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ErrorDefault">
+                <xs:sequence>
+                    <xs:element name="code" type="xs:int"/>
+                    <xs:element name="message" type="xs:string"/>
+                    <xs:element name="time" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="deleteRouteResponse">
+        <wsdl:part element="tns:deleteRouteResponse" name="deleteRouteResponse"> </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getRoutesWithGreaterDistanceResponse">
+        <wsdl:part element="tns:getRoutesWithGreaterDistanceResponse" name="getRoutesWithGreaterDistanceResponse"> </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getDistancesSumResponse">
+        <wsdl:part element="tns:getDistancesSumResponse" name="getDistancesSumResponse"> </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="deleteDistancesRequest">
+        <wsdl:part element="tns:deleteDistancesRequest" name="deleteDistancesRequest"> </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getRoutesResponse">
+        <wsdl:part element="tns:getRoutesResponse" name="getRoutesResponse"> </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getDistancesSumRequest">
+        <wsdl:part element="tns:getDistancesSumRequest" name="getDistancesSumRequest"> </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getRouteResponse">
+        <wsdl:part element="tns:getRouteResponse" name="getRouteResponse"> </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="putRouteRequest">
+        <wsdl:part element="tns:putRouteRequest" name="putRouteRequest"> </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="deleteDistancesResponse">
+        <wsdl:part element="tns:deleteDistancesResponse" name="deleteDistancesResponse"> </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="putRouteResponse">
+        <wsdl:part element="tns:putRouteResponse" name="putRouteResponse"> </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="postRouteRequest">
+        <wsdl:part element="tns:postRouteRequest" name="postRouteRequest"> </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="postRouteResponse">
+        <wsdl:part element="tns:postRouteResponse" name="postRouteResponse"> </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getRouteRequest">
+        <wsdl:part element="tns:getRouteRequest" name="getRouteRequest"> </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getRoutesRequest">
+        <wsdl:part element="tns:getRoutesRequest" name="getRoutesRequest"> </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getRoutesWithGreaterDistanceRequest">
+        <wsdl:part element="tns:getRoutesWithGreaterDistanceRequest" name="getRoutesWithGreaterDistanceRequest"> </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="deleteRouteRequest">
+        <wsdl:part element="tns:deleteRouteRequest" name="deleteRouteRequest"> </wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="RoutesPort">
+        <wsdl:operation name="deleteRoute">
+            <wsdl:input message="tns:deleteRouteRequest" name="deleteRouteRequest"> </wsdl:input>
+            <wsdl:output message="tns:deleteRouteResponse" name="deleteRouteResponse"> </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getRoutesWithGreaterDistance">
+            <wsdl:input message="tns:getRoutesWithGreaterDistanceRequest" name="getRoutesWithGreaterDistanceRequest"> </wsdl:input>
+            <wsdl:output message="tns:getRoutesWithGreaterDistanceResponse" name="getRoutesWithGreaterDistanceResponse"> </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getDistancesSum">
+            <wsdl:input message="tns:getDistancesSumRequest" name="getDistancesSumRequest"> </wsdl:input>
+            <wsdl:output message="tns:getDistancesSumResponse" name="getDistancesSumResponse"> </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteDistances">
+            <wsdl:input message="tns:deleteDistancesRequest" name="deleteDistancesRequest"> </wsdl:input>
+            <wsdl:output message="tns:deleteDistancesResponse" name="deleteDistancesResponse"> </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getRoutes">
+            <wsdl:input message="tns:getRoutesRequest" name="getRoutesRequest"> </wsdl:input>
+            <wsdl:output message="tns:getRoutesResponse" name="getRoutesResponse"> </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getRoute">
+            <wsdl:input message="tns:getRouteRequest" name="getRouteRequest"> </wsdl:input>
+            <wsdl:output message="tns:getRouteResponse" name="getRouteResponse"> </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="putRoute">
+            <wsdl:input message="tns:putRouteRequest" name="putRouteRequest"> </wsdl:input>
+            <wsdl:output message="tns:putRouteResponse" name="putRouteResponse"> </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="postRoute">
+            <wsdl:input message="tns:postRouteRequest" name="postRouteRequest"> </wsdl:input>
+            <wsdl:output message="tns:postRouteResponse" name="postRouteResponse"> </wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="RoutesPortSoap11" type="tns:RoutesPort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="deleteRoute">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="deleteRouteRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="deleteRouteResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getRoutesWithGreaterDistance">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getRoutesWithGreaterDistanceRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getRoutesWithGreaterDistanceResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getDistancesSum">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getDistancesSumRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getDistancesSumResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteDistances">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="deleteDistancesRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="deleteDistancesResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getRoutes">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getRoutesRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getRoutesResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getRoute">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getRouteRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getRouteResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="putRoute">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="putRouteRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="putRouteResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="postRoute">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="postRouteRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="postRouteResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="RoutesPortService">
+        <wsdl:port binding="tns:RoutesPortSoap11" name="RoutesPortSoap11">
+            <soap:address location="https://localhost:8088/ws"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

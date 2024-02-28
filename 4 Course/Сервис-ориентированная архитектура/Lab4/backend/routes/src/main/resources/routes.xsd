@@ -1,0 +1,188 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://soap"
+           targetNamespace="http://soap"
+           elementFormDefault="qualified">
+
+    <!--  Get /routes  -->
+    <xs:element name="getRoutesRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="sort" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="filter" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="page" type="xs:string" minOccurs="0"/>
+                <xs:element name="elementsCount" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getRoutesResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="routes" maxOccurs="unbounded" type="tns:RouteDTOSoap"/>
+                <xs:element name="page" type="xs:int" minOccurs="0"/>
+                <xs:element name="elementsCount" type="xs:int" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--  Post /routes  -->
+    <xs:element name="postRouteRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="route" type="tns:RouteDTOSoapRequest" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="postRouteResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="route" type="tns:RouteDTOSoap" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--  Get /routes/{id}  -->
+    <xs:element name="getRouteRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:string" minOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getRouteResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="route" type="tns:RouteDTOSoap" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--  Put /routes/{id}  -->
+    <xs:element name="putRouteRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:string" minOccurs="1"/>
+                <xs:element name="route" type="tns:RouteDTOSoapRequest" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="putRouteResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="route" type="tns:RouteDTOSoap" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--  Delete /routes/{id}  -->
+    <xs:element name="deleteRouteRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:string" minOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteRouteResponse">
+        <xs:complexType>
+            <xs:sequence>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--  Delete /routes/distances/{distance}  -->
+    <xs:element name="deleteDistancesRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="distance" type="xs:string" minOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteDistancesResponse">
+        <xs:complexType>
+            <xs:sequence>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--  Get /routes/distances/sum  -->
+    <xs:element name="getDistancesSumRequest">
+        <xs:complexType>
+            <xs:sequence>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getDistancesSumResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="distance" type="xs:float" minOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--  Get /routes/distances/{distance}/count/greater  -->
+    <xs:element name="getRoutesWithGreaterDistanceRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="distance" type="xs:string" minOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getRoutesWithGreaterDistanceResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="count" type="xs:int" minOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <!-- Types  -->
+    <xs:complexType name="CoordinateDTOSoap">
+        <xs:sequence>
+            <xs:element name="x" type="xs:int" minOccurs="0"/>
+            <xs:element name="y" type="xs:float" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="LocationDTOSoap">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long" minOccurs="1"/>
+            <xs:element name="coordinates" type="tns:CoordinateDTOSoap"/>
+            <xs:element name="name" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="RouteDTOSoap">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long" minOccurs="1"/>
+            <xs:element name="creationDate" type="xs:dateTime"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="from" type="tns:LocationDTOSoap"/>
+            <xs:element name="to" type="tns:LocationDTOSoap"/>
+            <xs:element name="distance" type="xs:float"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="RouteDTOSoapRequest">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="from" type="tns:LocationDTOSoapRequest"/>
+            <xs:element name="to" type="tns:LocationDTOSoapRequest"/>
+            <xs:element name="distance" type="xs:float"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="LocationDTOSoapRequest">
+        <xs:sequence>
+            <xs:element name="coordinates" type="tns:CoordinateDTOSoap"/>
+            <xs:element name="name" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
